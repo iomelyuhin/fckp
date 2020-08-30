@@ -1,21 +1,20 @@
 
 @import "../mixins/media";
 
-header {
-  width: 220Px;
-  background-color: red;
-
-  @include tablets {
-    width: 500px;
-  }
+.header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	// padding: 23px 0;
+	height: 87px;
+	background: rgba(#fff, 0.8);
 }
 
-.garanty {
-  fill: transparent;
+.header__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
 }
 
-.parag {
-  font-size: 30px;
-  width: 300px;
-  margin-left: 50px;
-}

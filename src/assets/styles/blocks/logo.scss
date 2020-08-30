@@ -1,0 +1,37 @@
+.logo__wrap {
+	display: flex;
+	align-items: center;
+}
+
+.logo__fckp {
+	display: flex;
+	// align-items: center;
+	padding-right: 10px;
+	border-right: 1px solid $separator;
+}
+
+.logo__fckp-image {
+	margin-right: 15px;
+}
+
+.logo__fckp-img {
+	height: 30px;
+	width: 128px;
+}
+
+.logo__fckp-desc {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 11px;
+	line-height: 16px;
+	color: $text-grey;
+}
+
+.logo__stankin {
+	margin-left: 20px;
+}
+
+.logo__stankin-img {
+	width: 69px;
+	height: 40px;
+}

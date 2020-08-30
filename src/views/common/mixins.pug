@@ -6,4 +6,7 @@ mixin image(path, ext, className, alt)
 	picture(class=`${className}`)
 		source(type='image/webp', srcset=`/assets/img/${path}.webp`)
 		source(type='image/jpg', srcset=`/assets/img/${path}.${ext}`)
-		img(src=`/img/${path}.${ext}` alt=`${alt}`)
+		img(src=`/assets/img/${path}.${ext}` alt=`${alt}`)
+
+mixin svg(name, clas, alt)
+	img(src=`/assets/img/icons/${name}.svg` class=clas alt=`${alt}`)

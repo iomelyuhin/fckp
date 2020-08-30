@@ -1,16 +1,14 @@
 
-//fonts
-
-@import "utils/*.scss";
+//utils
+@import "utils/variables.scss";
+@import "utils/fonts.scss";
+@import "utils/normalize.scss";
 
 //mixins
-
 @import "mixins/*.scss";
 
 // layout-base
-
 @import "layout/base.scss";
 
 //blocks
-
 @import "blocks/*.scss";

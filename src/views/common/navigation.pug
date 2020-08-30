@@ -1,0 +1,76 @@
+-
+	var navArr = [
+		{
+			name: "Направления",
+			list: [
+				{
+					name: "Сертификация материалов",
+					link: "/"
+				},
+				{
+					name: "Метрологическое обеспечение",
+					link: "/"
+				},
+				{
+					name: "Определение свойств материалов",
+					link: "/"
+				},
+				{
+					name: "Механическая обработка деталей",
+					link: "/"
+				}
+			]
+		},
+		{
+			name: "О ФЦКП",
+			list: [
+				{
+					name: "Что такое ФЦКП",
+					link: "/"
+				},
+				{
+					name: "Виды деятельности",
+					link: "/"
+				},
+				{
+					name: "Преимущества",
+					link: "/"
+				},
+				{
+					name: "Партнёры",
+					link: "/"
+				},
+				{
+					name: "Кейсы",
+					link: "/"
+				},
+				{
+					name: "Связаться с нами",
+					link: "/"
+				}
+			]
+		},
+		{
+			name: "Пресс-центр",
+			list: [
+				{
+					name: "Новости",
+					link: "/"
+				},
+				{
+					name: "Контакты",
+					link: "/"
+				}
+			]
+		}
+	]
+
+.navigation__wrap
+	ul.navigation__list
+		each item in navArr
+			li.navigation__item
+				button.navigation__item-btn.js__navBtn(type="button")=item.name
+				ul.navigation__item-sublist.js__navList
+					each elem in item.list
+						li.navigation__item-subitem
+							a.navigation__item-subitem-link(href=elem.link)=elem.name

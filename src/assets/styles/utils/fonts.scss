@@ -1,5 +1,54 @@
-// Файл для подключения нестандартных шрифтов
 
-.fonts {
-  font-size: 10px;
+.main-title {
+	font-family: Muller;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 48px;
+	line-height: 65px;
+	color: $text;
+}
+
+.main-desc {
+	font-family: Muller;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 24px;
+	color: $text;
+}
+
+.title {
+	font-family: Muller;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 48px;
+	line-height: 68px;
+	color: $text;
+}
+
+.subtitle {
+	font-family: Muller;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 24px;
+	color: $text;
+}
+
+.text {
+	font-family: Muller;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 28px;
+	color: $text;
+}
+
+.list-text {
+	font-family: Muller;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 24px;
+	color: $text-grey;
 }

@@ -1,9 +1,17 @@
 extends ../common/layout
 
 block variables
-    -var title = "Главная"
+	-var title = "Главная"
 
 block content
+	include ../includes/index/hero.pug
+	include ../includes/index/about.pug
+	include ../includes/index/products.pug
+	include ../includes/index/benefits.pug
+	include ../includes/index/advantages.pug
+	include ../includes/index/partners.pug
+	include ../includes/index/cases.pug
+	include ../includes/index/feedback.pug
 
 block scripts
-    //- script(src="/assets/js/main.min.js")
+	//- script(src="/assets/js/main.min.js")
