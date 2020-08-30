@@ -1,0 +1,9 @@
+mixin icon(name, mod)
+	svg(class="icon icon-" + name + ' ' + mod)
+		use(xlink:href="/assets/img/sprite.svg#" + name)
+
+mixin image(path, ext, className, alt)
+	picture(class=`${className}`)
+		source(type='image/webp', srcset=`/assets/img/${path}.webp`)
+		source(type='image/jpg', srcset=`/assets/img/${path}.${ext}`)
+		img(src=`/img/${path}.${ext}` alt=`${alt}`)
