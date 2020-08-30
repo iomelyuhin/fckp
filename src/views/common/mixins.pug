@@ -10,3 +10,6 @@ mixin image(path, ext, className, alt)
 
 mixin svg(name, clas, alt)
 	img(src=`/assets/img/icons/${name}.svg` class=clas alt=`${alt}`)
+
+mixin cta(text, href)
+	a.cta(href=href)=text

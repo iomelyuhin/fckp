@@ -1,0 +1,115 @@
+.hero__slider {
+  position: relative;
+}
+
+.hero__item {
+  height: 100vh;
+  background: url("/assets/img/content/hero_01.webp");
+  background-repeat: no-repeat;
+  background-position-x: 109%;
+  background-size: contain;
+}
+
+.hero__item-wrap {
+  padding-top: 87px;
+  height: 100vh;
+  clip-path: polygon(0 0, 80% 0, 40% 100%, 0 100%);
+  background-color: #fff;
+}
+
+.hero__item-content {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100% - 87px);
+}
+
+.hero__desc.main-desc {
+  margin-top: 25px;
+}
+
+.hero__btn {
+  margin-top: 44px;
+}
+
+.hero__slider-pagination-list {
+  position: absolute;
+  bottom: 47px;
+  display: flex;
+  left: 0;
+}
+
+.hero__slider-pagination-container {
+  position: relative;
+}
+
+.hero__slider-pagination-item {
+  width: 9px;
+  height: 9px;
+  border: 1px solid $pagin-border;
+  border-radius: 100%;
+  transition: 0.3s;
+	margin-right: 10px;
+	cursor: pointer;
+
+  &.active {
+		background-color: $pagin-border;
+  }
+	
+  &:last-child {
+		margin-right: 0;
+	}
+	
+	&:hover {
+		border: 1px solid $hl;
+		background-color: $hl;
+	}
+}
+
+.hero__slider-controls-container {
+  position: relative;
+}
+
+.hero__slider-controls-list {
+  position: absolute;
+  right: 0;
+  bottom: 32px;
+  display: flex;
+  z-index: 9;
+}
+
+.hero__slider-controls-item {
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+	background-color: rgba($w, 0.15);
+	border-radius: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&:first-child {
+		.hero__slider-controls-img {
+			transform: rotate(180deg);
+		}
+	}
+
+	&:hover {
+		.hero__slider-controls-img {
+			fill: $hl;
+		}
+	}
+}
+
+.hero__slider-controls-img {
+  width: 12px;
+  height: 8px;
+	fill: $w;
+	transition: 0.3s;
+}

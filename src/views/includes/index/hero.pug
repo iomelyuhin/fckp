@@ -1,2 +1,25 @@
-div
-	//- +image("content/hero_01", "jpg", "hero-img", "")
+section.hero
+	.hero__slider
+		ul.hero__list
+			li.hero__item(style="")
+				.hero__item-container.container
+					.hero__item-wrap
+						.hero__item-content
+							h1.hero__title.main-title Машиностроение, управление сложными техническими системами, обработка материалов
+							.hero__desc.main-desc Центр компетенций НТИ
+							.hero__btn.hero__btn--cta
+								+cta("Подробнее", "/")
+		.hero__slider-pagination
+			.hero__slider-pagination-container.container
+				ul.hero__slider-pagination-list
+					li.hero__slider-pagination-item
+					li.hero__slider-pagination-item.active
+					li.hero__slider-pagination-item
+					li.hero__slider-pagination-item
+		.hero__slider-controls
+			.hero__slider-controls-container.container
+				ul.hero__slider-controls-list
+					li.hero__slider-controls-item
+						+icon("arrow-slider-right", "hero__slider-controls-img")
+					li.hero__slider-controls-item
+						+icon("arrow-slider-right", "hero__slider-controls-img")
