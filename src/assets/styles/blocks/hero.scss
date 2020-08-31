@@ -6,7 +6,10 @@
   height: 100vh;
   background: url("/assets/img/content/hero_01.webp");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-position-x: right;
+  background-size: 1260Px;
+  max-width: 2260Px;
+  margin: 0 auto;
 }
 
 .hero__item-wrap {
