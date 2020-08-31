@@ -74,16 +74,21 @@ document.addEventListener(`DOMContentLoaded`, function () {
   changePagination()
 
   paginationDots.forEach((dot, i) => {
-    dot.classList.remove(`active`)
-
+    const ndx = i
     dot.addEventListener(`click`, function () {
       const activeSlide = document.querySelector(`.hero__item.active`)
-
-      slideIndex = i
+      clearDots()
+      slideIndex = ndx
       activeSlide.classList.remove(`active`)
-      slidesArray[i].classList.add(`active`)
+      slidesArray[ndx].classList.add(`active`)
       dot.classList.add(`active`)
 
     })
   })
+
+  function clearDots() {
+    paginationDots.forEach((dot) => {
+      dot.classList.remove(`active`)
+    })
+  }
 })
