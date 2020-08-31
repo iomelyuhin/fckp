@@ -1,5 +1,4 @@
 document.addEventListener(`DOMContentLoaded`, function () {
-
   // !=======================================================
   // !====================Hero slider========================
   // !=======================================================
@@ -17,6 +16,7 @@ document.addEventListener(`DOMContentLoaded`, function () {
         goToNextSlide()
       }
       // console.log(slideIndex);
+      clearInterval(autoplaySlider)
     })
   })
 
@@ -26,7 +26,6 @@ document.addEventListener(`DOMContentLoaded`, function () {
     const nextSlide = activeSlide.nextSibling
 
     activeSlide.classList.remove(`active`)
-
 
     if (!nextSlide) {
       slidesArray[0].classList.add(`active`)
@@ -62,7 +61,9 @@ document.addEventListener(`DOMContentLoaded`, function () {
     pagination.appendChild(dot)
   })
 
-  const paginationDots = pagination.querySelectorAll(`.hero__slider-pagination-item`)
+  const paginationDots = pagination.querySelectorAll(
+    `.hero__slider-pagination-item`
+  )
 
   function changePagination() {
     paginationDots.forEach((dot) => {
@@ -82,6 +83,7 @@ document.addEventListener(`DOMContentLoaded`, function () {
       activeSlide.classList.remove(`active`)
       slidesArray[ndx].classList.add(`active`)
       dot.classList.add(`active`)
+      clearInterval(autoplaySlider)
 
     })
   })
@@ -91,4 +93,10 @@ document.addEventListener(`DOMContentLoaded`, function () {
       dot.classList.remove(`active`)
     })
   }
+
+  const autoplaySlider = setInterval(() => {
+    goToNextSlide()
+  }, 5000)
+
+  // autoplaySlider();
 })
