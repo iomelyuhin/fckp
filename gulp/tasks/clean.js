@@ -1,7 +1,7 @@
 const del = require('del')
 
 module.exports = function clean(cb) {
-  return del('docs').then(() => {
+  return del('dist').then(() => {
     cb()
   })
 }

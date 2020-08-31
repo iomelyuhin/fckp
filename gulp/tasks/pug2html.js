@@ -20,6 +20,6 @@ module.exports = function pug2html() {
       // Updates the object in-place
       // path.extname = ".php";
     // }))
-    .pipe(gulp.dest('docs'))
+    .pipe(gulp.dest('dist'))
 }
 

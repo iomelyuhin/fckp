@@ -6,7 +6,7 @@ const src = path.join(root, 'src')
 module.exports = {
   root,
   src,
-  docsPath: path.join(root, '/docs'),
+  distPath: path.join(root, '/dist'),
   lighthouse: {
     reportPath: path.join(root, 'reports'),
     PORT: 8080,

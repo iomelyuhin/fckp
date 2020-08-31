@@ -39,6 +39,6 @@ module.exports = function styles() {
       propList: ["*", "!*border*"],
       selectorBlackList: [/^html$/]
     }))
-    .pipe(gulp.dest('docs/assets/css'))
+    .pipe(gulp.dest('dist/assets/css'))
 }
 
