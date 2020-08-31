@@ -6,8 +6,7 @@
   height: 100vh;
   background: url("/assets/img/content/hero_01.webp");
   background-repeat: no-repeat;
-  background-position-x: 109%;
-  background-size: contain;
+  background-size: cover;
 }
 
 .hero__item-wrap {
@@ -15,6 +14,10 @@
   height: 100vh;
   clip-path: polygon(0 0, 80% 0, 40% 100%, 0 100%);
   background-color: #fff;
+}
+
+.hero__item-container {
+  height: 100%;
 }
 
 .hero__item-content {
@@ -50,21 +53,21 @@
   border: 1px solid $pagin-border;
   border-radius: 100%;
   transition: 0.3s;
-	margin-right: 10px;
-	cursor: pointer;
+  margin-right: 10px;
+  cursor: pointer;
 
   &.active {
-		background-color: $pagin-border;
+    background-color: $pagin-border;
   }
 	
   &:last-child {
-		margin-right: 0;
-	}
+    margin-right: 0;
+  }
 	
-	&:hover {
-		border: 1px solid $hl;
-		background-color: $hl;
-	}
+  &:hover {
+    border: 1px solid $hl;
+    background-color: $hl;
+  }
 }
 
 .hero__slider-controls-container {
@@ -80,36 +83,36 @@
 }
 
 .hero__slider-controls-item {
-	width: 40px;
-	height: 40px;
-	margin-right: 10px;
-	background-color: rgba($w, 0.15);
-	border-radius: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background-color: rgba($w, 0.15);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 
-	&:last-child {
-		margin-right: 0;
-	}
+  &:last-child {
+    margin-right: 0;
+  }
 
-	&:first-child {
-		.hero__slider-controls-img {
-			transform: rotate(180deg);
-		}
-	}
+  &:first-child {
+    .hero__slider-controls-img {
+      transform: rotate(180deg);
+    }
+  }
 
-	&:hover {
-		.hero__slider-controls-img {
-			fill: $hl;
-		}
-	}
+  &:hover {
+    .hero__slider-controls-img {
+      fill: $hl;
+    }
+  }
 }
 
 .hero__slider-controls-img {
   width: 12px;
   height: 8px;
-	fill: $w;
-	transition: 0.3s;
+  fill: $w;
+  transition: 0.3s;
 }

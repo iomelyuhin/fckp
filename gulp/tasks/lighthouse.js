@@ -11,14 +11,14 @@ const reportGenerator = require('lighthouse/lighthouse-core/report/report-genera
 const config = require('../config')
 
 async function getNameHTMLFiles() {
-  const files = await fs.readdir(config.buildPath)
+  const files = await fs.readdir(config.docsPath)
 
   return files.filter(item => item.endsWith('.html'))
 }
 
 function startServer() {
   return server.init({
-    server: config.buildPath,
+    server: config.docsPath,
     port: config.lighthouse.PORT,
     notify: false,
     open: false,

@@ -7,9 +7,9 @@
 
 html {
   box-sizing: border-box;
-	font-size: 15px;
-	height: 100%;
-	font-family: Muller;
+  font-size: 15px;
+  height: 100%;
+  font-family: Muller;
 
   @include tablets {
     font-size: 14px;
@@ -21,8 +21,8 @@ html {
 }
 
 body {
-	margin: 0;
-	height: 100%;
+  margin: 0;
+  height: 100%;
 }
 
 img {
@@ -31,7 +31,7 @@ img {
 
 a {
   text-decoration: none;
-	outline: none;
+  outline: none;
 }
 
 ul {
@@ -41,8 +41,8 @@ ul {
 }
 
 button {
-	outline: none;
-	padding: 0;
+  outline: none;
+  padding: 0;
 }
 
 .wrapper {

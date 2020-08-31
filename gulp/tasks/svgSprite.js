@@ -24,7 +24,7 @@ module.exports = function svgSprite() {
       })
     )
     .pipe(rename("sprite.svg"))
-		.pipe(gulp.dest("build/assets/img"))
+		.pipe(gulp.dest("docs/assets/img"))
 		.pipe(gulp.src("src/assets/img/icons/*.svg"))
-		.pipe(gulp.dest("build/assets/img/icons"));
+		.pipe(gulp.dest("docs/assets/img/icons"));
 };

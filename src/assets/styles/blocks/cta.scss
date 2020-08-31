@@ -1,14 +1,14 @@
 .cta {
-	padding: 20px 55px;
-	font-weight: bold;
-	font-size: 18px;
-	color: $w;
-	background: $hl;
-	border-radius: 49px;
-	display: flex;
-	width: fit-content;
+  padding: 20px 55px;
+  font-weight: bold;
+  font-size: 18px;
+  color: $w;
+  background: $hl;
+  border-radius: 49px;
+  display: flex;
+  width: fit-content;
 
-	&:hover {
-		
-	}
+  &:hover {
+    display: block;
+  }
 }

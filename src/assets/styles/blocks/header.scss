@@ -2,20 +2,36 @@
 @import "../mixins/media";
 
 .header {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-	// padding: 23px 0;
-	z-index: 10;
-	height: 87px;
-	background: rgba(#fff, 0.95);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  // padding: 23px 0;
+  z-index: 10;
+  height: 87px;
+
+}
+
+.header__bg {
+  background: rgba(#fff, 0.85);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(4px);
 }
 
 .header__container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
+.header__logo,
+.header__navigation,
+.header__phone {
+  position: relative;
+  z-index: 10;
+}
