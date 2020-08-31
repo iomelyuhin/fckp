@@ -2,14 +2,27 @@
   position: relative;
 }
 
+.hero__list {
+  position: relative;
+  height: 100vh;
+}
+
 .hero__item {
   height: 100vh;
+  width: 100%;
   background: url("/assets/img/content/hero_01.webp");
   background-repeat: no-repeat;
   background-position-x: right;
   background-size: 1460Px;
   max-width: 2260Px;
   margin: 0 auto;
+  position: absolute;
+  opacity: 0;
+  transition: 0.3s;
+
+  &.active {
+    opacity: 1;
+  }
 }
 
 .hero__item-wrap {

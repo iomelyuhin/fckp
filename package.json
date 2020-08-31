@@ -8,8 +8,8 @@
     "build": "gulp build",
     "lighthouse": "gulp build && gulp lighthouse",
     "test": "editorconfig-cli && stylelint ./src/assets/styles/**/*.scss --syntax scss && eslint ./src/assets/js",
-    "stylelint-fix": "stylelint ./src/assets/styles/**/*.scss --fix --syntax scss",
-    "eslint-fix": "eslint ./src/assets/js/** --fix"
+    "style-fix": "stylelint ./src/assets/styles/**/*.scss --fix --syntax scss",
+    "es-fix": "eslint ./src/assets/js/** --fix"
   },
   "keywords": [],
   "author": "Denys Vykhrystiuk",
