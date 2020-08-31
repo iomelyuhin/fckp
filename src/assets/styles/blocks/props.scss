@@ -1,0 +1,37 @@
+.props {
+  display: flex;
+}
+
+.props__item {
+  margin-right: 40px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.props__item-pic {
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  background: #FAFAFB;
+  border: 1px solid #E5EAEF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.props__icon {
+  width: 44px;
+  height: 44px;
+  fill: $hl;
+
+  &.icon-ruler {
+    height: 36px;
+  }
+}
+
+.props__item-desc {
+  margin-top: 17px;
+  line-height: 24px;
+}

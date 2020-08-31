@@ -1,2 +1,66 @@
+-
+	var prodArr = [
+		{
+			img: "content/product_01",
+			title: "Сертификация материалов",
+			desc: "Сертификация материалов станкоинструментальной промышленности",
+			link: "/"
+		},
+		{
+			img: "content/product_02",
+			title: "Метрологическое обеспечение",
+			desc: "Комплекс работ по обеспечению единства измерений, как на отдельном предприятии, так и по стране в целом",
+			link: "/"
+		},
+		{
+			img: "content/product_03",
+			title: "Определение свойств материалов",
+			desc: "Металлы, пластики, керамика, а именно механических свойств, химический состав, микроструктура",
+			link: "/"
+		},
+		{
+			img: "content/product_04",
+			title: "Механическая обработка деталей",
+			desc: "Механообработка любых материалов и любой сложности деталей. Изготовление опытных образцов",
+			link: "/"
+		},
+		{
+			img: "content/product_05",
+			title: "Механическая обработка деталей",
+			desc: "Механообработка любых материалов и любой сложности деталей. Изготовление опытных образцов",
+			link: "/"
+		},
+		{
+			img: "content/product_01",
+			title: "Механическая обработка деталей",
+			desc: "Механообработка любых материалов и любой сложности деталей. Изготовление опытных образцов",
+			link: "/"
+		},
+		{
+			img: "content/product_01",
+			title: "Механическая обработка деталей",
+			desc: "Механообработка любых материалов и любой сложности деталей. Изготовление опытных образцов",
+			link: "/"
+		},
+		{
+			img: "content/product_06",
+			title: "Другая задача или не нашли что искали?",
+			desc: "Оставьте заявку и наш менеджер свяжется с вами для уточнений деталей",
+			link: "/"
+		},
+	]
 
-.text products
+section.products
+	.products__container.container
+		h2.product__title.title Ключевые виды деятельности ФЦКП
+		ul.product__list
+			each prod in prodArr
+				li.product__item
+					.product__item-image
+						+image(prod.img, "jpg", "product__item-img", "")
+					.product__item-content
+						.product__item-content-text
+							h3.product__item-title.subtitle=prod.title
+							.product__item-desc=prod.desc
+						.product__item-cta.product__item-cta--ctaLight
+						+ctaLight("Подробнее", prod.link)

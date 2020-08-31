@@ -70,7 +70,8 @@
 		each item in navArr
 			li.navigation__item
 				button.navigation__item-btn.js__navBtn(type="button")=item.name
-				ul.navigation__item-sublist.js__navList
+				.navigation__item-sublist.js__navList
+					.navigation__item-subitem-bg
 					each elem in item.list
-						li.navigation__item-subitem
+						.navigation__item-subitem
 							a.navigation__item-subitem-link(href=elem.link)=elem.name

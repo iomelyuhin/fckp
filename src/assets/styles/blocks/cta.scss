@@ -7,8 +7,27 @@
   border-radius: 49px;
   display: flex;
   width: fit-content;
+  transition: 0.3s;
+	
+  &:hover {
+    background-color: $hl-hover;
+  }
+}
+
+.ctaLight {
+  padding: 20px 55px;
+  font-weight: bold;
+  color: $hl;
+  background: $w;
+  border-radius: 49px;
+  display: flex;
+  width: fit-content;
+  border: 1px solid $hl;
+  font-size: 16px;
+  transition: 0.3s;
 
   &:hover {
-    display: block;
+    background-color: $hl;
+    color: $w;
   }
 }

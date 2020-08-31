@@ -8,29 +8,18 @@ document.addEventListener(`DOMContentLoaded`, function () {
 
   navButtons.forEach((navButton) => {
     navButton.addEventListener(`click`, (e) => {
-      closeSubmenu()
       const currentList = e.target.nextSibling
-      currentList.classList.toggle(`active`)
-      navButton.classList.toggle(`active`)
-      docListen()
-    })
-  })
-
-  function docListen() {
-
-    document.addEventListener(`click`, (e) => {
-      if (
-        e.target.classList !== `navigation__item-subitem` &&
-        e.target.classList !== `navigation__item-subitem-link` &&
-        e.target.classList !== `navigation__item` &&
-        e.target.classList !== `navigation__item-btn js__navBtn active`
-      ) {
+      if (navButton.classList.contains(`active`)) {
+        navButton.classList.remove(`active`)
+        currentList.classList.remove(`active`)
+      } else {
         closeSubmenu()
+        currentList.classList.add(`active`)
+        navButton.classList.add(`active`)
       }
 
     })
-  }
-
+  })
 
   function closeSubmenu() {
     navButtons.forEach((navButton) => {

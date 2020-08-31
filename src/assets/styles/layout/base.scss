@@ -28,6 +28,13 @@ body {
 img {
   max-width: 100%;
 }
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
 
 a {
   text-decoration: none;
@@ -45,8 +52,16 @@ button {
   padding: 0;
 }
 
+section {
+  margin-top: 100px;
+
+  &.hero {
+    margin-top: 0;
+  }
+}
+
 .wrapper {
-  overflow: hidden;
+  // overflow: hidden;
   min-height: 100%;
   position: relative;
 }
@@ -55,4 +70,35 @@ button {
   margin: 0 auto;
   width: 95%;
   max-width: 1700px;
+}
+
+.point-list {
+  // list-style-type: disc;
+  color: $hl;
+  margin-left: 15px;
+
+  & li {
+    color: $text;
+    font-size: 15px;
+    line-height: 24px;
+    position: relative;
+    padding: 9px 0;
+
+    &::before {
+      content: "";
+      display: flex;
+      width: 4Px;
+      height: 4Px;
+      border-radius: 100%;
+      background-color: $hl;
+      position: absolute;
+      top: 17px;
+      left: -13px;
+    }
+		
+  }
+}
+
+.italic {
+  font-style: italic;
 }
