@@ -1,0 +1,19 @@
+.cases__content {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	height: 310px;
+}
+
+.cases__list {
+	display: flex;
+	flex-wrap: nowrap;
+	width: 100%;
+	// overflow: hidden;
+	position: absolute;
+}
+
+.cases__item {
+	min-height: 310px;
+	width: 30%;
+}

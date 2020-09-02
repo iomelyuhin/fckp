@@ -1,2 +1,23 @@
+-
+	var partArr = [
+		"content/partner_01",
+		"content/partner_01",
+		"content/partner_01",
+		"content/partner_01",
+		"content/partner_01",
+		"content/partner_01",
+		"content/partner_01",
+		"content/partner_01",
+		"content/partner_01",
+		"content/partner_01"
+	]
 
-.text partners
+section.partners
+	.partners__container.container
+		h2.partners__title.title Партнёры
+	.partners__content
+			ul.partners__list
+				each partner in partArr
+					li.partners__item
+						.partners__item-image
+							+image(partner, "png", "partners__item-img", partner)
