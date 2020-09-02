@@ -1,0 +1,50 @@
+.benefits {
+  margin: 0;
+  background: url("/assets/img/content/benefits_bg.webp") no-repeat, $bg-grey;
+  background-position: center center;
+  background-size: cover;
+  min-height: 500px;
+}
+
+
+.benefits__container {
+  padding-top: 100px;
+}
+
+.benefits__wrapper {
+  border-top: 1px solid #C9C9CE;
+  padding-top: 77px;
+}
+
+.benefits__list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+
+.benefits__value {
+  font-weight: 300;
+  font-size: 60px;
+  color: $text;
+  display: flex;
+  background-color: $w;
+  padding: 20px 30px 10px 30px;
+  border-radius: 50px 50px 50px 5px;
+  border: 1px solid #F2F2F5;
+
+  &::after {
+    content: "+";
+    display: flex;
+    margin-left: 18px;
+    color: $pagin-border;
+  }
+}
+
+.benefits__desc {
+  margin-top: 20px;
+  border-left: 2px solid $hl;
+  padding: 6px 0 6px 30px;
+  line-height: 1;
+  font-size: 18px;
+}

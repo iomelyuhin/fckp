@@ -1,0 +1,61 @@
+.advantages__list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.advantages__item {
+  width: calc(25% - 30Px);
+  border-radius: 15px;
+  background-color: $bg-grey;
+  padding: 30px;
+  margin-bottom: 30px;
+  min-height: 250px;
+}
+
+.advantages__item-pic {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.advantages__item-icon {
+  fill: $hl;
+
+  &.icon-student {
+    width: 34px;
+    height: 44px;
+  }
+  &.icon-books {
+    width: 38px;
+    height: 44px;
+  }
+  &.icon-bulldozer {
+    width: 44px;
+    height: 30px;
+  }
+  &.icon-colors {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.advantages__item-title {
+  margin-top: 20px;
+  display: flex;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.advantages__item-desc {
+  margin-top: 10px;
+  display: flex;
+  font-size: 14px;
+  line-height: 24px;
+  color: $text-grey;
+}

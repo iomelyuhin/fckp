@@ -1,2 +1,55 @@
+-
+	var advArr = [
+		{
+			icon: "student",
+			title: "Уровень подготовки",
+			desc: "Высокий уровень подготовки специалистов центра"
+		},
+		{
+			icon: "books",
+			title: "Самая большая база знаний в России",
+			desc: "Так как за спиной стоит Университет Станкин"
+		},
+		{
+			icon: "bulldozer",
+			title: "Производство опытных образцов",
+			desc: "Собственное оборудование для производства опытных образцов и пробных партий"
+		},
+		{
+			icon: "colors",
+			title: "Работа с современными материалами",
+			desc: "Композиты, керамика и тд в том числе наноразмеры"
+		},
+		{
+			icon: "colors",
+			title: "Работа с современными материалами",
+			desc: "Композиты, керамика и тд в том числе наноразмеры"
+		},
+		{
+			icon: "bulldozer",
+			title: "Производство опытных образцов",
+			desc: "Собственное оборудование для производства опытных образцов и пробных партий"
+		},
+		{
+			icon: "student",
+			title: "Уровень подготовки",
+			desc: "Высокий уровень подготовки специалистов центра"
+		},
+		{
+			icon: "books",
+			title: "Самая большая база знаний в России",
+			desc: "Так как за спиной стоит Университет Станкин"
+		},
+	]
 
-.text adventages
+section.advantages
+	.advantages__container.container
+		h2.advantages__title.title Приемущества
+		ul.advantages__list
+			each adv in advArr
+				li.advantages__item
+					.advantages__item-pic
+						+icon(adv.icon, "advantages__item-icon")
+					h3.advantages__item-title=adv.title
+					.advantages__item-desc=adv.desc
+					

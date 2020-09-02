@@ -1,2 +1,29 @@
+-
+	var benArr = [
+		{
+			value: "2 057",
+			desc: "Исследований"
+		},
+		{
+			value: "1 943",
+			desc: "Успешных проектов"
+		},
+		{
+			value: "987",
+			desc: "Исследований"
+		},
+		{
+			value: "145",
+			desc: "Цифры"
+		}
+	]
 
-.text benefits
+section.benefits
+	.benefits__container.container
+		.benefits__wrapper
+			h2.benefits__title.title ФЦКП в цифрах
+			ul.benefits__list
+				each ben in benArr
+					li.benefits__item
+						.benefits__value=ben.value
+						.benefits__desc=ben.desc
