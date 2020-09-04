@@ -1,35 +1,35 @@
 -
 	var casesArr = [
 		{
-			image: "case_01.jpg",
+			image: "case_01",
 			date: "21 августа 2020",
 			hash: "#технопарк",
 			title: "Технопарк «Инженеры будущего» Можно в две строки",
 			desc: "Механообработка любых материалов и любой сложности деталей. Изготовление опытных образцов Механообработка любых материалов и любой"
 		},
 		{
-			image: "case_01.jpg",
+			image: "case_01",
 			date: "21 августа 2020",
 			hash: "#технопарк",
 			title: "Технопарк «Инженеры будущего» Можно в две строки",
 			desc: "Механообработка любых материалов и любой сложности деталей. Изготовление опытных образцов Механообработка любых материалов и любой"
 		},
 		{
-			image: "case_01.jpg",
+			image: "case_01",
 			date: "21 августа 2020",
 			hash: "#технопарк",
 			title: "Технопарк «Инженеры будущего» Можно в две строки",
 			desc: "Механообработка любых материалов и любой сложности деталей. Изготовление опытных образцов Механообработка любых материалов и любой"
 		},
 		{
-			image: "case_01.jpg",
+			image: "case_01",
 			date: "21 августа 2020",
 			hash: "#технопарк",
 			title: "Технопарк «Инженеры будущего» Можно в две строки",
 			desc: "Механообработка любых материалов и любой сложности деталей. Изготовление опытных образцов Механообработка любых материалов и любой"
 		},
 		{
-			image: "case_01.jpg",
+			image: "case_01",
 			date: "21 августа 2020",
 			hash: "#технопарк",
 			title: "Технопарк «Инженеры будущего» Можно в две строки",
@@ -39,13 +39,23 @@
 
 section.cases
 	.cases__container.container
-		h2.cases__title Успешно реализованные кейсы
+		h2.cases__title.title Успешно реализованные кейсы
 		.cases__content
 			ul.cases__list
 				each casee in casesArr
-					li.cases__item(style=`background: url(/assets/img/content/${casee.image}) no-repeat`)
+					li.cases__item
+						.cases__image
+							+image(`content/${casee.image}`, "jpg", "cases__image-pic", "")
 						.cases__item-info
 							.cases__item-date=casee.date
 							.cases__item-hashtag=casee.hash
-						.cases__item-title=casee.title
-						.cases__item-desc=casee.desc
+						.cases__text-content
+							h3.cases__item-title.subtitle=casee.title
+							.cases__item-desc=casee.desc
+		.cases__controls
+			.cases__arrow.disabled
+				+icon("arrow-slider-right", "cases__icon cases__icon--prev")
+			.cases__arrow
+				+icon("arrow-slider-right", "cases__icon cases__icon--next")
+		.cases__projects-btn.cases__projects-btn--ctaLight
+			+ctaLight("Все проекты", "/projects.html")

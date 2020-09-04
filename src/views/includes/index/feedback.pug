@@ -1,2 +1,33 @@
-
-.text feedback
+section.feedback
+	.feedback__container.container
+		.feedback__content
+			h2.feedback__title.title Обратная связь
+			.feedback__desc.desc Полученная заявка будет обработана в течение 1 рабочего дня
+			.feedback__contacts
+				a.feedback__contacts-item(href="tel:74956063602") 
+					.feedback__contacts-item-icon
+						+icon("phone", "feedback__contacts-phone-pic")
+					.feedback__contacts-phone-text +7 (495) 606-36-02
+				a.feedback__contacts-item(href="mailto:fckp@mail.ru") 
+					.feedback__contacts-item-icon
+						+icon("mail", "feedback__contacts-mail-pic")
+					.feedback__contacts-mail-text fckp@mail.ru
+			form.feedback__form(action="" method="POST")
+				.feedback__wrap
+					label.feedback__input-label
+						input.feedback__input(type="text" name="name" placeholder="Имя" required)
+						.feedback__input-req-dot
+					label.feedback__input-label
+						input.feedback__input(type="text" name="phone" placeholder="Телефон" required)
+						.feedback__input-req-dot
+				.feedback__wrap
+					label.feedback__input-label
+						input.feedback__input(type="text" name="email" placeholder="email")
+					label.feedback__input-label
+						input.feedback__input(type="text" name="depart" placeholder="Должность")
+				label.feedback__comment
+					textarea.feedback__input(name="message", cols="30", rows="10" placeholder="Комментарий")
+				.feedback__action
+					.feedback__action-disclaimer Нажимая на кнопку «Отправить», Вы даете #[a(href="/privacy.html" target="_blank" class="feedback__action-disclaimer-link") соглание на обработку персональных данных]
+					label.feedback__action-button.feedback__action-button--cta
+						button#sendButton.cta(type="submit") Отправить

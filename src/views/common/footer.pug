@@ -1,2 +1,125 @@
-footer
-    p Footer
+-
+	var footerLinks = [
+		{
+			title: "Title1",
+			links: [
+				{
+					text: "Some texts",
+					href: "/"
+				},
+				{
+					text: "Some texts",
+					href: "/"
+				},
+				{
+					text: "Some texts",
+					href: "/"
+				},
+				{
+					text: "Some texts",
+					href: "/"
+				},
+				{
+					text: "Some texts",
+					href: "/"
+				},
+			]
+		},
+		{
+			title: "Title2",
+			links: [
+				{
+					text: "Some texts",
+					href: "/"
+				},
+				{
+					text: "Some texts",
+					href: "/"
+				},
+				{
+					text: "Some texts",
+					href: "/"
+				},
+				{
+					text: "Some texts",
+					href: "/"
+				},
+				{
+					text: "Some texts",
+					href: "/"
+				},
+			]
+		},
+		{
+			title: "Title3",
+			links: [
+				{
+					text: "Some texts",
+					href: "/"
+				},
+				{
+					text: "Some texts",
+					href: "/"
+				},
+				{
+					text: "Some texts",
+					href: "/"
+				},
+				{
+					text: "Some texts",
+					href: "/"
+				},
+				{
+					text: "Some texts",
+					href: "/"
+				},
+			]
+		},
+		{
+			title: "Title4",
+			links: [
+				{
+					text: "Some texts",
+					href: "/"
+				},
+				{
+					text: "Some texts",
+					href: "/"
+				},
+				{
+					text: "Some texts",
+					href: "/"
+				},
+				{
+					text: "Some texts",
+					href: "/"
+				},
+				{
+					text: "Some texts",
+					href: "/"
+				},
+			]
+		},
+	]
+footer.footer
+	.footer__container.container
+		.footer__head
+			.footer__logo.logo.logo--footer
+				include logo-white.pug
+			.footer__navigation.navigation.navigation--footer
+				include navigation.pug
+			.footer__phone.phone.phone--footer
+				include phone.pug
+		.footer__links
+			ul.footer__links-column
+				each item in footerLinks
+					li.footer__links-column-item
+						h3.footer__links-column-title=item.title
+						ul.footer__links-column-list
+							each link in item.links
+								li.footer__links-column-list-item
+									a.footer__links-column-link(href=link.href)=link.text
+		.footer__copy
+			.footer__copyright Copyright © ФЦКП 2020  Все права защищены
+			.footer__policy
+				a.footer__policy-link(href="/policy.html") Политика конфидециальности

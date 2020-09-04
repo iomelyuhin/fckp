@@ -1,3 +1,11 @@
+.cases__container {
+  position: relative;
+}
+
+.cases__title {
+  margin-bottom: 32px;
+}
+
 .cases__content {
   width: 100%;
   position: relative;
@@ -8,12 +16,133 @@
 .cases__list {
   display: flex;
   flex-wrap: nowrap;
-  width: 100%;
-  // overflow: hidden;
   position: absolute;
 }
 
 .cases__item {
+  height: 310px;
+  width: calc((95vw - 80Px) / 3);
+  border-radius: 15px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 22px 30px;
+  // backdrop-filter: opacity(20%);
+  position: relative;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 1) 100%);
+  z-index: 2;
+  cursor: pointer;
+
+
+  &:hover {
+    .cases__image {
+      filter: blur(3px);
+    }
+  }
+}
+
+.cases__image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   min-height: 310px;
-  width: 30%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.7;
+  transition: 0.5s;
+	
+}
+
+.cases__image-pic {
+  height: 100%;
+  filter: brightness(60%);
+	
+  img {
+    max-width: initial;
+    max-height: 100%;
+  }
+}
+
+.cases__item-info {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  font-size: 12px;
+  color: $w;
+  position: relative;
+  z-index: 3;
+}
+
+.cases__text-content {
+  position: relative;
+  z-index: 3;
+
+}
+
+.cases__item-title {
+  color: $w;
+}
+
+.cases__item-desc {
+  color: $separator;
+  font-size: 15px;
+  margin-top: 8px;
+  line-height: 24px;
+}
+
+.cases__controls {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+
+.cases__icon {
+  width: 12px;
+  height: 8px;
+  fill: $hl;
+
+}
+
+.cases__arrow {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 1px solid $border;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  cursor: pointer;
+	
+  &:first-child {
+    transform: rotate(180deg);
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.disabled {
+    .cases__icon {
+      fill: $separator;
+    }
+    &:hover {
+      border-color: $border;
+    }
+  }
+
+  &:hover {
+    border-color: $hl;
+  }
+}
+
+.cases__projects-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }

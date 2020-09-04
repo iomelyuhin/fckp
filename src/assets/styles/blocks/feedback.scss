@@ -1,0 +1,157 @@
+.feedback {
+  margin-top: 0;
+}
+
+.feedback__content {
+  background-color: $bg-grey;
+  border: 1px solid $border;
+  border-radius: 15px;
+  padding: 70px 65px 100px 65px;
+}
+
+.feedback__title {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.feedback__desc {
+  margin-top: 14px;
+  font-size: 24px;
+}
+
+.feedback__contacts {
+  margin-top: 40px;
+  display: flex;
+}
+
+.feedback__contacts-item {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.feedback__contacts-phone-text {
+  font-size: 24px;
+  font-weight: 500;
+  text-decoration: none;
+  color: $text;
+}
+
+.feedback__contacts-mail-text {
+  font-size: 18px;
+  text-decoration: none;
+  color: $text;
+}
+
+.feedback__contacts-phone-pic {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: $hl;
+}
+
+.feedback__contacts-item-icon {
+  margin-right: 10px;
+}
+
+.feedback__contacts-mail-pic {
+  width: 18px;
+  height: 14px;
+  fill: none;
+  stroke: $hl;
+}
+
+.feedback__form {
+  margin-top: 50px;
+}
+
+.feedback__wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.feedback__input-label {
+  // display: flex;
+  position: relative;
+  width: 48%;
+}
+
+.feedback__input {
+  width: 100%;
+  background: $w;
+  border: 1px solid $border-active;
+  border-radius: 15px;
+  padding: 30px;
+  transition: 0.3s;
+  outline: none;
+  font-size: 16px;
+  color: $text;
+  caret-color: $hl;
+  display: flex;
+  position: relative;
+  align-items: center;
+
+
+  &:focus {
+    border-color: $hl;
+  }
+
+  &::placeholder {
+    color: $text;
+  }
+
+  // &::after {
+  // 	content: "";
+		
+  // }
+}
+
+.feedback__input-req-dot {
+  position: absolute;
+  display: flex;
+  right: 36px;
+  width: 5Px;
+  height: 5Px;
+  background-color: $hl;
+  border-radius: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#__lpform_name {
+  display: none;
+}
+
+textarea.feedback__input {
+  resize: vertical;
+
+}
+
+.feedback__action {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.feedback__action-disclaimer {
+  margin-right: 48px;
+}
+
+#sendButton {
+  border: none;
+}
+
+.feedback__action-disclaimer-link {
+  color: $hl;
+  transition: 0.3s;
+
+  &:hover {
+    color: $hl-hover;
+  }
+}

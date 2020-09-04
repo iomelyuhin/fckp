@@ -1,5 +1,77 @@
-
 .footer {
-  border: 1px
-    solid red;
+  background: $footer-bg;
+  padding: 100px 0 70px 0;
+}
+
+.footer__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .logo__fckp {
+    border-right: none;
+  }
+
+  .navigation__item-btn,
+  .phone__link {
+    color: $w;
+  }
+}
+
+.footer__links {
+  margin-top: 60px;
+  padding: 60px 0;
+  border: 1px solid rgba($separator, 0.2);
+  border-right: none;
+  border-left: none;
+}
+
+.footer__links-column {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__links-column-item {
+  width: 25%;
+}
+
+.footer__links-column-title {
+  color: $w;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.footer__links-column-list {
+  margin-top: 16px;
+}
+
+.footer__links-column-link {
+  font-size: 15px;
+  line-height: 30px;
+  color: $text-grey;
+  transition: 0.3s;
+
+  &:hover {
+    color: $w;
+  }
+}
+
+.footer__copy {
+  margin-top: 60px;
+  display: flex;
+}
+
+.footer__copyright,
+.footer__policy {
+  width: 50%;
+  color: $text-grey;
+}
+
+.footer__policy-link {
+  color: $text-grey;
+	
+  &:hover {
+    color: $w;
+  }
 }
