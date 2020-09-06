@@ -29,6 +29,9 @@
 .footer__links-column {
   display: flex;
   justify-content: space-between;
+  @include tab {
+    display: none;
+  }
 }
 
 .footer__links-column-item {
@@ -60,12 +63,26 @@
 .footer__copy {
   margin-top: 60px;
   display: flex;
+	
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .footer__copyright,
 .footer__policy {
   width: 50%;
   color: $text-grey;
+	
+  @include phones {
+    width: 100%;
+  }
+}
+
+.footer__policy {
+  @include phones {
+    margin-top: 10px;
+  }
 }
 
 .footer__policy-link {
@@ -74,4 +91,69 @@
   &:hover {
     color: $w;
   }
+}
+
+.footer__navigation {
+  @include tab {
+    display: none;
+  }
+}
+
+.footer__phone {
+  @include tab {
+    display: none;
+  }
+}
+
+.footer__mobile {
+  display: none;
+
+  @include tab {
+    display: flex;
+    // flex-direction: column;
+  }
+  .phone__link {
+    color: $w;
+    display: flex;
+    align-items: center;
+  }
+  .footer__mobile-menu-mail {
+    margin-left: 10px;
+  }
+
+  .footer__mobile-menu-mail-text {
+    color: $w;
+  }
+}
+
+.footer__mobile-menu-mail {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+  margin-top: 20px;
+
+  // &:last-child {
+  // 	margin: 0;
+  // }
+
+  @include phones {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.footer__mobile-menu-mail-icon {
+  margin-right: 10px;
+}
+
+.footer__mobile-menu-mail-pic {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: $hl;
+}
+.footer__mobile-menu-mail-text {
+  font-size: 18px;
+  text-decoration: none;
+  color: $text;
 }

@@ -7,6 +7,10 @@
   border: 1px solid $border;
   border-radius: 15px;
   padding: 70px 65px 100px 65px;
+	
+  @include phones {
+    padding: 50px 20px;
+  }
 }
 
 .feedback__title {
@@ -22,6 +26,11 @@
 .feedback__contacts {
   margin-top: 40px;
   display: flex;
+	
+  @include phones {
+    flex-direction: column;
+
+  }
 }
 
 .feedback__contacts-item {
@@ -30,7 +39,12 @@
   margin-right: 40px;
 
   &:last-child {
+    margin: 0;
+  }
+	
+  @include phones {
     margin-right: 0;
+    margin-bottom: 20px;
   }
 }
 
@@ -72,13 +86,21 @@
 .feedback__wrap {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+	
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .feedback__input-label {
   // display: flex;
   position: relative;
   width: 48%;
+  margin-bottom: 30px;
+
+  @include phones {
+    width: 100%;
+  }
 }
 
 .feedback__input {
@@ -137,10 +159,19 @@ textarea.feedback__input {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+	
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .feedback__action-disclaimer {
   margin-right: 48px;
+	
+  @include phones {
+    margin-right: 0;
+    line-height: 22px;
+  }
 }
 
 #sendButton {
@@ -153,5 +184,15 @@ textarea.feedback__input {
 
   &:hover {
     color: $hl-hover;
+  }
+	
+  @include phones {
+    margin: 6px 0;
+  }
+}
+
+.feedback__action-button {
+  @include phones {
+    margin-top: 20px;
   }
 }

@@ -1,10 +1,24 @@
 header.header
 	.header__container.container
 		.header__bg
-		.header__logo.logo.logo--header
+		.header__logo.header__logo--logo.logo
 			include logo.pug
-		.header__navigation.navigation.navigation--header
+		.header__navigation.navigation.header__navigation--navigation
 			include navigation.pug
-		.header__phone.phone.phone--header
+		.header__phone.phone.header__phone--phone
 			include phone.pug
+		.header__mobile-menu
+			.header__mobile-menu-nav.header__mobile-menu-nav--navigation
+				include navigation.pug
+			.header__mobile-menu-contacts
+				.header__mobile-menu-phone.header__mobile-menu-phone--phone
+					include phone.pug
+				a.header__mobile-menu-mail(href="mailto:fckp@mail.ru")
+					.header__mobile-menu-mail-icon
+						+icon("mail", "header__mobile-menu-mail-pic")
+					.header__mobile-menu-mail-text fckp@mail.ru
 
+		.header__hamburger.header__hamburger--hamburger
+			button.hamburger.hamburger--collapse(type="button" aria-label="navigation-menu")
+				span.hamburger-box(data-name="menu")
+					span.hamburger-inner

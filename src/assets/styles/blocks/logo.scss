@@ -8,6 +8,10 @@
   // align-items: center;
   padding-right: 10px;
   border-right: 1px solid $separator;
+	
+  @include phones {
+    flex-direction: column;
+  }
 }
 
 .logo__fckp-image {

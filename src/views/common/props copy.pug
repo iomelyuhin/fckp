@@ -1,0 +1,26 @@
+-
+	var propsArr = [
+		{
+			icon: "microscope",
+			desc: "Лабораторный<br /> комплекс"
+		},
+		{
+			icon: "reactor",
+			desc: "Промышленный<br /> комплекс"
+		},
+		{
+			icon: "flag",
+			desc: "Испытательный<br /> полигон"
+		},
+		{
+			icon: "ruler",
+			desc: "Общая площадь<br /> 10 000 м2"
+		}
+	]
+
+ul.props
+	each prop in propsArr
+		li.props__item
+			.props__item-pic
+				+icon(prop.icon, "props__icon")
+			.props__item-desc.text!=prop.desc

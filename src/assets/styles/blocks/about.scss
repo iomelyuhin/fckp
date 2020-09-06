@@ -9,6 +9,15 @@
   position: sticky;
   align-self: flex-start;
   top: 90px;
+	
+  @include phones {
+    position: relative;
+    width: 80%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    // display: flex;
+  }
 }
 
 .about__slider-img {
@@ -18,10 +27,19 @@
   height: 100%;
   border-radius: 15px;
   overflow: hidden;
+	
+  @include phones {
+    max-width: 335px;
+    max-height: initial;
+  }
 }
 
 .about__content {
   padding-left: 60px;
+	
+  @include phones {
+    padding: 0;
+  }
 }
 
 .about__props {
@@ -31,6 +49,10 @@
 .about__text {
   max-width: 80%;
   margin: 13px 0;
+	
+  @include tablets {
+    max-width: 100%;
+  }
 }
 
 .about__subtitle {

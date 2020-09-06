@@ -4,15 +4,29 @@
   width: 100%;
   justify-content: space-between;
   margin-top: 30px;
+	
+  @include phones {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scroll-snap-type: y mandatory;
+    overflow: -moz-scrollbars-none;
+  }
 }
 
 .advantages__item {
-  width: calc(25% - 30Px);
+  width: calc(100% / 3 - 30Px);
   border-radius: 15px;
   background-color: $bg-grey;
   padding: 30px;
   margin-bottom: 30px;
   min-height: 250px;
+	
+  @include phones {
+    scroll-snap-align: start;
+    width: 250px;
+    flex-shrink: 0;
+    margin-right: 20px;
+  }
 }
 
 .advantages__item-pic {

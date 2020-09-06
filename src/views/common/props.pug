@@ -2,19 +2,13 @@
 	var propsArr = [
 		{
 			icon: "microscope",
-			desc: "Лабораторный<br /> комплекс"
-		},
-		{
-			icon: "reactor",
-			desc: "Промышленный<br /> комплекс"
-		},
-		{
-			icon: "flag",
-			desc: "Испытательный<br /> полигон"
+			title: "Лабораторией исследования свойств материалов.",
+			desc: "Лаборатория не имеет аналогов на территории Российской Федерации и стран СНГ. "
 		},
 		{
 			icon: "ruler",
-			desc: "Общая площадь<br /> 10 000 м2"
+			title: "Метрологической лабораторией. ",
+			desc: "Точность исследований соответствует национальным и отраслевым стандартам ГОСТ, ISO, ASTM."
 		}
 	]
 
@@ -23,4 +17,17 @@ ul.props
 		li.props__item
 			.props__item-pic
 				+icon(prop.icon, "props__icon")
-			.props__item-desc.text!=prop.desc
+			.props__item-content
+				h3.props__item-title.subtitle!=prop.title
+				.props__item-desc.text!=prop.desc
+	li.props__item
+		.props__item-pic
+			+icon("reactor", "props__icon")
+		.props__item-content
+				h3.props__item-title.subtitle Производственными участками,
+				.props__item-desc.text оборудованными высокоавтоматизированным -оборудованием и измерительным инструментом производства мировых лидеров отрасли: «TaylorGobson» (Англия), «KarlZeiss» (Германия), «MahrProductGroup” (Германия), «MitutoyoCorporation» (Япония):
+				ul.about__list.point-list
+					li.about__item Участком механообработки;
+					li.about__item Заготовительным участком;
+					li.about__item Шлифовальным участком;
+					li.about__item Сварочным участком;

@@ -19,6 +19,12 @@
   }
 }
 
+@mixin tab {
+  @media (max-width: $mediaWidthTab) {
+    @content;
+  }
+}
+
 @mixin tablets-hor {
   @media (max-width: $mediaWidthTabletHorizontal) {
     @content;

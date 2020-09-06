@@ -29,4 +29,23 @@ document.addEventListener(`DOMContentLoaded`, function () {
       list.classList.remove(`active`)
     })
   }
+
+  // !==================================
+  // !==========hamburger menu==========
+  // !==================================
+  const burgerButton = document.querySelector(`.hamburger`)
+  const mobileMenu = document.querySelector(`.header__mobile-menu`)
+  const body = document.querySelector(`body`)
+
+  burgerButton.addEventListener(`click`, (e) => {
+    e.preventDefault()
+    burgerButton.classList.toggle(`is-active`)
+    mobileMenu.classList.toggle(`active`)
+    if (mobileMenu.classList.contains(`active`)) {
+      body.style.position = `fixed`
+    } else {
+      body.style.position = `relative`
+
+    }
+  })
 })

@@ -1,6 +1,5 @@
 .props {
   display: flex;
-  flex-direction: column;
 	
   @include phones {
     justify-content: start;
@@ -10,9 +9,6 @@
 
 .props__item {
   margin-right: 40px;
-  display: flex;
-  flex-shrink: 0;
-  padding: 20px 0;
 
   &:last-child {
     margin-right: 0;
@@ -37,8 +33,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 20px;
-  flex-shrink: 0;
 }
 
 .props__icon {
@@ -52,6 +46,6 @@
 }
 
 .props__item-desc {
-  margin-top: 0;
+  margin-top: 17px;
   line-height: 24px;
 }

@@ -1,11 +1,12 @@
 
+//mixins
+@import "mixins/*.scss";
 //utils
 @import "utils/variables.scss";
+@import "utils/hamburgers/hamburgers.scss";
 @import "utils/fonts.scss";
 @import "utils/normalize.scss";
 
-//mixins
-@import "mixins/*.scss";
 
 // layout-base
 @import "layout/base.scss";

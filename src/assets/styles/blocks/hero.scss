@@ -13,8 +13,8 @@
   background: url("/assets/img/content/hero_01.webp");
   background-repeat: no-repeat;
   background-position-x: right;
-  background-size: 1460Px;
-  max-width: 2260Px;
+  background-size: 1460px;
+  max-width: 2260px;
   margin: 0 auto;
   position: absolute;
   opacity: 0;
@@ -29,7 +29,15 @@
   padding-top: 87px;
   height: 100vh;
   clip-path: polygon(0 0, 80% 0, 40% 100%, 0 100%);
-  background-color: #fff;
+  background-color: #E5E5E5;
+	
+  @include tab {
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 80%);
+  }
+  @include phones {
+    clip-path: initial;
+    background-color: rgba(#E5E5E5, 0.95);
+  }
 }
 
 .hero__item-container {
@@ -42,6 +50,15 @@
   flex-direction: column;
   justify-content: center;
   height: calc(100% - 87px);
+
+  @include tab {
+    width: 100%;
+    justify-content: flex-start;
+  }
+	
+  @include phones {
+    justify-content: center;
+  }
 }
 
 .hero__desc.main-desc {
@@ -50,6 +67,11 @@
 
 .hero__btn {
   margin-top: 44px;
+	
+  @include phones {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .hero__slider-pagination-list {
@@ -75,11 +97,11 @@
   &.active {
     background-color: $pagin-border;
   }
-	
+
   &:last-child {
     margin-right: 0;
   }
-	
+
   &:hover {
     border: 1px solid $hl;
     background-color: $hl;
@@ -96,6 +118,15 @@
   bottom: 32px;
   display: flex;
   z-index: 9;
+
+  @include tab {
+    left: 0;
+    bottom: 20vh;
+  }
+  @include phones {
+    bottom: 40px;
+    justify-content: center;
+  }
 }
 
 .hero__slider-controls-item {
@@ -118,11 +149,25 @@
       transform: rotate(180deg);
     }
   }
+  .hero__slider-controls-img {
+    @include tab {
+      fill: $hl;
+    }
+  }
 
   &:hover {
     .hero__slider-controls-img {
       fill: $hl;
+			
+      @include tab {
+        fill: $hl-hover;
+      }
     }
+  }
+	
+  @include tab {
+    border: 1px solid #F2F2F5;
+    background: $w;
   }
 }
 

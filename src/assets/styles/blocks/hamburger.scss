@@ -1,0 +1,11 @@
+.hamburger {
+  background-color: $bg-grey;
+  border-radius: 100%;
+  width: 47px;
+  height: 47px;
+  border: 1px solid $border;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}

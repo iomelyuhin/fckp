@@ -238,9 +238,6 @@
   font-style: italic;
 }
 
-
-
-
 .main-title {
   font-family: Muller;
   font-style: normal;
@@ -248,6 +245,11 @@
   font-size: 48px;
   line-height: 65px;
   color: $text;
+	
+  @include phones {
+    font-size: 30Px;
+    line-height: 45px;
+  }
 }
 
 .main-desc {
@@ -266,6 +268,8 @@
   font-size: 48px;
   line-height: 68px;
   color: $text;
+	
+	
 }
 
 .subtitle {

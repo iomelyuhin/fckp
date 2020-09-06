@@ -1,4 +1,3 @@
-
 @import "../mixins/media";
 
 .header {
@@ -9,17 +8,16 @@
   // padding: 23px 0;
   z-index: 10;
   height: 87px;
-
 }
 
 .header__bg {
   background: rgba(#fff, 0.85);
+  backdrop-filter: blur(4px);
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  backdrop-filter: blur(4px);
 }
 
 .header__container {
@@ -34,4 +32,128 @@
 .header__phone {
   position: relative;
   z-index: 10;
+}
+
+.header__navigation,
+.header__phone {
+  @include tab {
+    display: none;
+  }
+}
+
+.header__mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 200vw;
+  transition: 0.3s;
+  width: 50%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(#fff, 0.85);
+  backdrop-filter: blur(4px);
+  padding: 90px 20px 70px 20px;
+
+  &.active {
+    display: flex;
+    right: 0;
+  }
+	
+  @include phones {
+    width: 100%;
+  }
+
+  .phone__text {
+    font-size: 24Px;
+  }
+
+  .phone__link {
+    align-items: center;
+  }
+}
+
+.header__hamburger {
+  display: none;
+
+  @include tab {
+    display: block;
+  }
+}
+
+.header__mobile-menu-nav {
+  .navigation__list {
+    flex-direction: column;
+    // border-top: 1px solid $separator;
+  }
+
+  .navigation__item {
+    margin-left: 0;
+    padding: 25px 0;
+    border-top: 1px solid $separator;
+
+    &:last-child {
+      border-bottom: 1px solid $separator;
+    }
+  }
+
+  .navigation__item-btn {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .navigation__item-sublist {
+    position: relative;
+  }
+
+  .navigation__item-subitem-bg {
+    position: relative;
+    border: none;
+    background: none;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .navigation__item-sublist.active {
+    padding: 0;
+    padding-bottom: 20px;
+  }
+
+  .navigation__item-subitem-link {
+    line-height: 30px;
+  }
+}
+.header__mobile-menu-mail {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+  margin-top: 20px;
+
+  // &:last-child {
+  // 	margin: 0;
+  // }
+
+  @include phones {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.header__mobile-menu-mail-icon {
+  margin-right: 10px;
+}
+
+.header__mobile-menu-mail-pic {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: $hl;
+}
+.header__mobile-menu-mail-text {
+  font-size: 18px;
+  text-decoration: none;
+  color: $text;
 }

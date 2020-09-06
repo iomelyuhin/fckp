@@ -11,8 +11,8 @@ mixin image(path, ext, className, alt)
 mixin svg(name, clas, alt)
 	img(src=`/assets/img/icons/${name}.svg` class=clas alt=`${alt}`)
 
-mixin cta(text, href)
-	a.cta(href=href)=text
+mixin cta(text, href, mod)
+	a.cta(href=href class=`cta--${mod}`)=text
 	
 mixin ctaLight(text, href)
 	a.ctaLight(href=href)=text

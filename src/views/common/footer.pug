@@ -111,6 +111,12 @@ footer.footer
 			.footer__phone.phone.phone--footer
 				include phone.pug
 		.footer__links
+			.footer__mobile
+				include phone.pug
+				a.footer__mobile-menu-mail(href="mailto:fckp@mail.ru")
+					.footer__mobile-menu-mail-icon
+						+icon("mail", "footer__mobile-menu-mail-pic")
+					.footer__mobile-menu-mail-text fckp@mail.ru
 			ul.footer__links-column
 				each item in footerLinks
 					li.footer__links-column-item
