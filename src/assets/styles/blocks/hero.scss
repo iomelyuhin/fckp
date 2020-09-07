@@ -1,5 +1,7 @@
 .hero__slider {
   position: relative;
+  background-color: #E5E5E5;
+	
 }
 
 .hero__list {
@@ -30,6 +32,7 @@
   height: 100vh;
   clip-path: polygon(0 0, 80% 0, 40% 100%, 0 100%);
   background-color: #E5E5E5;
+	
 	
   @include tab {
     clip-path: polygon(0 0, 100% 0, 100% 50%, 0 80%);

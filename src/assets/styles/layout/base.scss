@@ -61,9 +61,19 @@ section {
 }
 
 .wrapper {
-  overflow: hidden;
   min-height: 100%;
   position: relative;
+  max-width: 100%;
+	
+  @include phones {
+    overflow: hidden;
+
+  }
+}
+
+.maincontent {
+  overflow: visible;
+
 }
 
 .container {
