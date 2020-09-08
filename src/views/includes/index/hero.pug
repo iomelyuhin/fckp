@@ -1,53 +1,37 @@
 section.hero
-	.hero__slider
-		ul.hero__list
-			li.hero__item(style="background-image: url(\"/assets/img/content/hero_01.webp\"").active
-				.hero__item-wrap
-					.hero__item-container.container
-						.hero__item-content
-							h1.hero__title.main-title Высокоточная механообработка материалов и деталей любой сложности
-							.hero__desc.main-desc Центр компетенций НТИ
-							.hero__btn.hero__btn--cta
-								+cta("Подробнее", "/", "hero")
-			li.hero__item(style="background-image: url(\"/assets/img/content/hero_01.webp\"")
-				.hero__item-wrap
-					.hero__item-container.container
-						.hero__item-content
-							h1.hero__title.main-title Проектирование и изготовление опытных образцов изделий
-							.hero__desc.main-desc 
-							.hero__btn.hero__btn--cta
-								+cta("Подробнее", "/", "hero")
-			li.hero__item(style="background-image: url(\"/assets/img/content/hero_01.webp\"")
-				.hero__item-wrap
-					.hero__item-container.container
-						.hero__item-content
-							h1.hero__title.main-title Сертификация материалов станкоинструментальной промышленности.
-							.hero__desc.main-desc 
-							.hero__btn.hero__btn--cta
-								+cta("Подробнее", "/", "hero")
-			li.hero__item(style="background-image: url(\"/assets/img/content/hero_01.webp\"")
-				.hero__item-wrap
-					.hero__item-container.container
-						.hero__item-content
-							h1.hero__title.main-title Производственный и технологический консалтинг
-							.hero__desc.main-desc 
-							.hero__btn.hero__btn--cta
-								+cta("Подробнее", "/", "hero")
-			li.hero__item(style="background-image: url(\"/assets/img/content/hero_01.webp\"")
-				.hero__item-wrap
-					.hero__item-container.container
-						.hero__item-content
-							h1.hero__title.main-title Метрологические измерения
-							.hero__desc.main-desc 
-							.hero__btn.hero__btn--cta
-								+cta("Подробнее", "/", "hero")
-		.hero__slider-pagination
-			.hero__slider-pagination-container.container
-				ul.hero__slider-pagination-list
-		.hero__slider-controls
-			.hero__slider-controls-container.container
-				ul.hero__slider-controls-list
-					li.hero__slider-controls-item.hero__slider-controls-item--prev
-						+icon("arrow-slider-right", "hero__slider-controls-img")
-					li.hero__slider-controls-item.hero__slider-controls-item--next
-						+icon("arrow-slider-right", "hero__slider-controls-img")
+	.hero__slider.js__slider
+		.hero__slider-wrapper.js__slider-list
+			.hero__slider-track.js__slider-track
+				.hero__slider-slide.js__slide
+					.hero__item(style="background-image: url(\"/assets/img/content/hero_01.webp\"").active
+						.hero__item-wrap
+							.hero__item-container.container
+								.hero__item-content
+									h1.hero__title.main-title Высокоточная механообработка материалов и деталей любой сложности
+									.hero__desc.main-desc Центр компетенций НТИ
+									.hero__btn.hero__btn--cta
+										+cta("Подробнее", "/", "hero")
+				.hero__slider-slide.js__slide
+					.hero__item(style="background-image: url(\"/assets/img/content/hero_01.webp\"").active
+						.hero__item-wrap
+							.hero__item-container.container
+								.hero__item-content
+									h1.hero__title.main-title Высокоточная механообработка материалов и деталей любой сложности
+									.hero__desc.main-desc Центр компетенций НТИ
+									.hero__btn.hero__btn--cta
+										+cta("Подробнее", "/", "hero")
+		.hero__slider-pagination-container.container
+			.hero__slider-pagination-list.js__slider-pagination
+		.hero__slider-arrows.js__slider-arrows
+			button.prev.disabled.hero__slider-controls-item.hero__slider-controls-item--prev
+				+icon("arrow-slider-right", "hero__slider-controls-img")
+			.hero__slider-index.js__slider-index
+			button.next.hero__slider-controls-item.hero__slider-controls-item--next
+				+icon("arrow-slider-right", "hero__slider-controls-img")
+		//- .hero__slider-controls
+		//- 	.hero__slider-controls-container.container
+		//- 		ul.hero__slider-controls-list
+		//- 			li.hero__slider-controls-item.hero__slider-controls-item--prev
+		//- 				+icon("arrow-slider-right", "hero__slider-controls-img")
+		//- 			li.hero__slider-controls-item.hero__slider-controls-item--next
+		//- 				+icon("arrow-slider-right", "hero__slider-controls-img")

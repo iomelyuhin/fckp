@@ -1,12 +1,44 @@
 .hero__slider {
   position: relative;
   background-color: #E5E5E5;
-	
+  user-select: none;
+  touch-action: pan-y;
+
+  img {
+    pointer-events: none;
+  }
 }
 
-.hero__list {
-  position: relative;
+.hero__slider-wrapper {
   height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  &.grab {
+    cursor: grab;
+  }
+
+  &.grabbing {
+    cursor: grabbing;
+  }
+}
+
+.hero__slider-track {
+  display: flex;
+}
+
+.hero__slider-slide {
+  width: 100%;
+  height: 100%;
+  /* Чтобы слайды не сжимались */
+  flex-shrink: 0;
+  /* Увеличиваем и центрируем цифру внутри слайда */
+  // font-size: 50px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // border: 1px solid #000;
+  position: relative;
 }
 
 .hero__item {
@@ -31,7 +63,7 @@
   padding-top: 87px;
   height: 100vh;
   clip-path: polygon(0 0, 80% 0, 40% 100%, 0 100%);
-  background-color: #E5E5E5;
+  background-color: $bg-grey;
 	
 	
   @include tab {
@@ -39,7 +71,7 @@
   }
   @include phones {
     clip-path: initial;
-    background-color: rgba(#E5E5E5, 0.95);
+    background-color: rgba($bg-grey, 0.95);
   }
 }
 
@@ -82,6 +114,7 @@
   bottom: 47px;
   display: flex;
   left: 0;
+  z-index: 10;
 }
 
 .hero__slider-pagination-container {
@@ -89,12 +122,13 @@
 }
 
 .hero__slider-pagination-item {
-  width: 9px;
-  height: 9px;
+  width: 9Px;
+  height: 9Px;
   border: 1px solid $pagin-border;
   border-radius: 100%;
   transition: 0.3s;
   margin-right: 10px;
+  background-color: #fff;
   cursor: pointer;
 
   &.active {
@@ -115,7 +149,7 @@
   position: relative;
 }
 
-.hero__slider-controls-list {
+.hero__slider-arrows {
   position: absolute;
   right: 0;
   bottom: 32px;
@@ -133,6 +167,7 @@
 }
 
 .hero__slider-controls-item {
+  border: none;
   width: 40px;
   height: 40px;
   margin-right: 10px;
@@ -179,4 +214,32 @@
   height: 8px;
   fill: $w;
   transition: 0.3s;
+}
+
+.hero__slider-index {
+  display: none;
+}
+
+.next,
+.prev {
+  border: none;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background-color: rgba($w, 0.25);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+	
+  img {
+    pointer-events: initial;
+  }
+}
+
+.next.disabled,
+.prev.disabled {
+  background-color: rgba($w, 0.15);
+  pointer-events: none;
 }

@@ -15,9 +15,14 @@
 section.partners
 	.partners__container.container
 		h2.partners__title.title Партнёры
-	.partners__content
-			ul.partners__list
+	.partners__content.js__partners-slider
+		.partners__content-wrapper.js__partners-slider-list
+			ul.partners__list.js__partners-slider-track
 				each partner in partArr
-					li.partners__item
+					li.partners__item.js__partners-slide
 						.partners__item-image
 							+image(partner, "png", "partners__item-img", partner)
+			.js__partners-slider-arrows
+				.prev
+				.index
+				.next

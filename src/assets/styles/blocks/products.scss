@@ -36,12 +36,17 @@
 
 }
 
+.product__item-image {
+  height: 206Px;
+}
+
 .product__item-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 18px 20px 30px 30px;
-  min-height: 300px;
+  // min-height: 300px;
+  height: calc(100% - 206Px);
 
   @include tablets-hor {
     padding: 18px;
