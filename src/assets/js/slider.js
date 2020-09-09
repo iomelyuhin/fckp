@@ -42,8 +42,8 @@ document.addEventListener(`DOMContentLoaded`, function () {
       switchDots(slideIndex)
 
     }
-    const swipeStart = function () {
-      const evt = getEvent()
+    const swipeStart = function (e) {
+      const evt = getEvent(e)
 
       if (allowSwipe) {
         transition = true
@@ -56,8 +56,8 @@ document.addEventListener(`DOMContentLoaded`, function () {
 
         sliderTrack.style.transition = ``
 
-        document.addEventListener(`touchmove`, swipeAction)
-        document.addEventListener(`mousemove`, swipeAction)
+        document.addEventListener(`touchmove`, swipeAction(e))
+        document.addEventListener(`mousemove`, swipeAction(e))
         document.addEventListener(`touchend`, swipeEnd)
         document.addEventListener(`mouseup`, swipeEnd)
 
@@ -65,8 +65,8 @@ document.addEventListener(`DOMContentLoaded`, function () {
         sliderList.classList.add(`grabbing`)
       }
     }
-    const swipeAction = function () {
-      const evt = getEvent()
+    const swipeAction = function (e) {
+      const evt = getEvent(e)
       const style = sliderTrack.style.transform
       const transform = +style.match(trfRegExp)[0]
 
@@ -130,8 +130,8 @@ document.addEventListener(`DOMContentLoaded`, function () {
       isScroll = false
       isSwipe = false
 
-      document.removeEventListener(`touchmove`, swipeAction)
-      document.removeEventListener(`mousemove`, swipeAction)
+      document.removeEventListener(`touchmove`, (event) => swipeAction(event))
+      document.removeEventListener(`mousemove`, (event) => swipeAction(event))
       document.removeEventListener(`touchend`, swipeEnd)
       document.removeEventListener(`mouseup`, swipeEnd)
 
@@ -179,11 +179,12 @@ document.addEventListener(`DOMContentLoaded`, function () {
       indexSlideText.innerHTML = `${slideIndex + 1}/${slides.length}`
 
     })
-    slider.addEventListener(`touchstart`, swipeStart)
-    slider.addEventListener(`mousedown`, swipeStart)
+    slider.addEventListener(`touchstart`, (event) => swipeStart(event))
+    slider.addEventListener(`mousedown`, (event) => swipeStart(event))
 
     arrows.addEventListener(`click`, function (event) {
       const target = event.target
+      // console.log(event.target.classList)
 
       if (target.classList.contains(`next`)) {
         slideIndex++
@@ -194,7 +195,6 @@ document.addEventListener(`DOMContentLoaded`, function () {
       }
 
       slide()
-
       // indexSlideText.innerHTML = `${slideIndex + 1}/${slides.length}`;
 
     })

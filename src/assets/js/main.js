@@ -8,7 +8,8 @@ document.addEventListener(`DOMContentLoaded`, function () {
 
   navButtons.forEach((navButton) => {
     navButton.addEventListener(`click`, (e) => {
-      const currentList = e.target.nextSibling
+
+      const currentList = e.target.nextSibling.nextSibling
       if (navButton.classList.contains(`active`)) {
         navButton.classList.remove(`active`)
         currentList.classList.remove(`active`)

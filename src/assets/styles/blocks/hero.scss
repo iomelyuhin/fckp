@@ -9,8 +9,14 @@
   }
 }
 
+.hero__title {
+  @include phones {
+    margin-top: 45px;
+  }
+}
+
 .hero__slider-wrapper {
-  height: 100vh;
+  height: 78vh;
   width: 100%;
   overflow: hidden;
 
@@ -20,6 +26,11 @@
 
   &.grabbing {
     cursor: grabbing;
+  }
+	
+  @include phones {
+    height: 100%;
+    min-height: 880px;
   }
 }
 
@@ -57,6 +68,11 @@
   &.active {
     opacity: 1;
   }
+
+  @include phones {
+    height: 100%;
+    min-height: 880px;
+  }
 }
 
 .hero__item-wrap {
@@ -70,8 +86,11 @@
     clip-path: polygon(0 0, 100% 0, 100% 50%, 0 80%);
   }
   @include phones {
-    clip-path: initial;
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 0 70%);
+    // clip-path: initial;
     background-color: rgba($bg-grey, 0.95);
+    height: 100%;
+    min-height: 880px;
   }
 }
 
@@ -92,7 +111,7 @@
   }
 	
   @include phones {
-    justify-content: center;
+    justify-content: start;
   }
 }
 
@@ -161,8 +180,8 @@
     bottom: 20vh;
   }
   @include phones {
-    bottom: 40px;
-    justify-content: center;
+    bottom: 35%;
+    left: 0;
   }
 }
 
@@ -177,6 +196,15 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+	
+  &.disabled {
+    .hero__slider-controls-img {
+      @include tab {
+
+        fill: $separator;
+      }
+    }
+  }
 
   &:last-child {
     margin-right: 0;
@@ -191,6 +219,7 @@
     @include tab {
       fill: $hl;
     }
+		
   }
 
   &:hover {
@@ -233,8 +262,8 @@
   align-items: center;
   cursor: pointer;
 	
-  img {
-    pointer-events: initial;
+  svg {
+    pointer-events: none;
   }
 }
 
