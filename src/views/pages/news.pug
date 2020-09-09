@@ -1,12 +1,11 @@
 extends ../common/layout
 
 block variables
-	-var title = "Главная"
+	-var title = "Новости"
 
 block content
-	h2 NEWS
-	//- include ../includes/index/hero.pug
-	//- include ../includes/index/about.pug
+	include ../common/breadcrumbs.pug
+	include ../includes/news/main.pug
 	//- include ../includes/index/products.pug
 	//- include ../includes/index/benefits.pug
 	//- include ../includes/index/advantages.pug
@@ -15,6 +14,6 @@ block content
 	//- include ../includes/index/feedback.pug
 
 block scripts
-	script(src="/assets/js/index.min.js")
-	script(src="/assets/js/dynad.min.js")
-	script(src="/assets/js/slider.min.js")
+	//- script(src="/assets/js/index.min.js")
+	//- script(src="/assets/js/dynad.min.js")
+	//- script(src="/assets/js/slider.min.js")

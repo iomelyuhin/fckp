@@ -1,0 +1,10 @@
+-
+	var bcList = [
+		'Главная', 'Новости'
+	]
+.breadcrumbs__container.container
+	ul.breadcrumbs__list
+		each item in bcList
+			li.breadcrumbs__item
+				a(href="/").breadcrumbs__link=item
+	
