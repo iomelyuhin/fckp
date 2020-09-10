@@ -1,0 +1,20 @@
+section.current-news
+	.current-news__container.container
+		include ../../common/breadcrumbs.pug
+		.current-news__wrapper
+			.current-news__title-content
+				h1.current-news__title
+				.current-news__date
+			.current-news__slider.js__news-slider
+				.current-news__slider-wrapper.js__news-slider-list
+					.current-news__slider-track.js__news-slider-track
+						.current-news__slider-slide.js__news-slide
+							img.current-news__slider-slide-image(src="")
+				.current-news__slider-pagination-container.container
+					.current-news__slider-pagination-list.js__slider-pagination
+				.current-news__slider-arrows.js__slider-arrows
+					button.prev.disabled.current-news__slider-controls-item.current-news__slider-controls-item--prev
+						+icon("arrow-slider-right", "current-news__slider-controls-img")
+					.current-news__slider-index.js__slider-index
+					button.next.current-news__slider-controls-item.current-news__slider-controls-item--next
+						+icon("arrow-slider-right", "current-news__slider-controls-img")

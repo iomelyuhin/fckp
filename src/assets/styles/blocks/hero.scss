@@ -16,7 +16,7 @@
 }
 
 .hero__slider-wrapper {
-  height: 78vh;
+  height: 90vh;
   width: 100%;
   overflow: hidden;
 
@@ -271,4 +271,5 @@
 .prev.disabled {
   background-color: rgba($w, 0.15);
   pointer-events: none;
+  opacity: 0.6;
 }

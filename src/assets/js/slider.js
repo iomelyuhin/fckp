@@ -4,7 +4,6 @@ document.addEventListener(`DOMContentLoaded`, function () {
     const sliderList = slider.querySelector(jssliderList)
     const sliderTrack = slider.querySelector(jssliderTrack)
     const slides = slider.querySelectorAll(jsslides)
-    // const dots = slider.querySelectorAll(jsdot)
     const arrows = slider.querySelector(jsarrows)
     const prev = arrows.children[0]
     const indexSlideText = arrows.children[1]
@@ -26,7 +25,7 @@ document.addEventListener(`DOMContentLoaded`, function () {
     const lastTrf = (slides.length - 1) * slideWidth
     const posThreshold = slides[0].offsetWidth * 0.35
     const trfRegExp = /([-0-9.]+(?=px))/
-    const getEvent = function (event) {
+    const getEvent = function () {
       return event.type.search(`touch`) !== -1 ? event.touches[0] : event
     }
     const slide = function () {
@@ -37,36 +36,38 @@ document.addEventListener(`DOMContentLoaded`, function () {
         slideIndex * slideWidth
       }px, 0px, 0px)`
 
-      prev.classList.toggle(`disabled`, slideIndex === 0)
-      next.classList.toggle(`disabled`, slideIndex === (slides.length - 1))
+      prev.classList.toggle(`disabled`, slideIndex == 0)
+      next.classList.toggle(`disabled`, slideIndex == (slides.length - 1))
       switchDots(slideIndex)
 
     }
-    const swipeStart = function (e) {
-      const evt = getEvent(e)
+    const swipeStart = function () {
+      let evt = getEvent();
 
       if (allowSwipe) {
-        transition = true
+        transition = true;
 
-        nextTrf = (slideIndex + 1) * -slideWidth
-        prevTrf = (slideIndex - 1) * -slideWidth
+        nextTrf = (slideIndex + 1) * -slideWidth;
+        prevTrf = (slideIndex - 1) * -slideWidth;
 
-        posInit = posX1 = evt.clientX
-        posY1 = evt.clientY
+        posInit = posX1 = evt.clientX;
+        posY1 = evt.clientY;
 
-        sliderTrack.style.transition = ``
+        sliderTrack.style.transition = "";
 
-        document.addEventListener(`touchmove`, swipeAction(e))
-        document.addEventListener(`mousemove`, swipeAction(e))
-        document.addEventListener(`touchend`, swipeEnd)
-        document.addEventListener(`mouseup`, swipeEnd)
+        document.addEventListener("touchmove", swipeAction);
+        document.addEventListener("mousemove", swipeAction);
+        document.addEventListener("touchend", swipeEnd);
+        document.addEventListener("mouseup", swipeEnd);
 
-        sliderList.classList.remove(`grab`)
-        sliderList.classList.add(`grabbing`)
-      }
-    }
-    const swipeAction = function (e) {
-      const evt = getEvent(e)
+        sliderList.classList.remove("grab");
+        sliderList.classList.add("grabbing");
+			}
+			switchDots(slideIndex)
+			
+    };
+    const swipeAction = function () {
+      const evt = getEvent()
       const style = sliderTrack.style.transform
       const transform = +style.match(trfRegExp)[0]
 
@@ -79,7 +80,7 @@ document.addEventListener(`DOMContentLoaded`, function () {
       // определение действия свайп или скролл
       if (!isSwipe && !isScroll) {
         const posY = Math.abs(posY2)
-        if (posY > 7 || posX2 === 0) {
+        if (posY > 7 || posX2 == 0) {
           isScroll = true
           allowSwipe = false
         } else if (posY < 7) {
@@ -89,7 +90,7 @@ document.addEventListener(`DOMContentLoaded`, function () {
 
       if (isSwipe) {
         // запрет ухода влево на первом слайде
-        if (slideIndex === 0) {
+        if (slideIndex == 0) {
           if (posInit < posX1) {
             setTransform(transform, 0)
             return
@@ -122,7 +123,9 @@ document.addEventListener(`DOMContentLoaded`, function () {
         sliderTrack.style.transform = `translate3d(${
           transform - posX2
         }px, 0px, 0px)`
-      }
+			}
+			switchDots(slideIndex)
+			
     }
     const swipeEnd = function () {
       posFinal = posInit - posX1
@@ -130,8 +133,8 @@ document.addEventListener(`DOMContentLoaded`, function () {
       isScroll = false
       isSwipe = false
 
-      document.removeEventListener(`touchmove`, (event) => swipeAction(event))
-      document.removeEventListener(`mousemove`, (event) => swipeAction(event))
+      document.removeEventListener(`touchmove`, swipeAction)
+      document.removeEventListener(`mousemove`, swipeAction)
       document.removeEventListener(`touchend`, swipeEnd)
       document.removeEventListener(`mouseup`, swipeEnd)
 
@@ -155,7 +158,8 @@ document.addEventListener(`DOMContentLoaded`, function () {
         }
       } else {
         allowSwipe = true
-      }
+			}
+			switchDots(slideIndex)
     }
     const setTransform = function (transform, comapreTransform) {
       if (transform >= comapreTransform) {
@@ -163,12 +167,16 @@ document.addEventListener(`DOMContentLoaded`, function () {
           sliderTrack.style.transform = `translate3d(${comapreTransform}px, 0px, 0px)`
         }
       }
-      allowSwipe = false
+			allowSwipe = false
+			switchDots(slideIndex)
+			
     }
     const reachEdge = function () {
       transition = false
       swipeEnd()
-      allowSwipe = true
+			allowSwipe = true
+			switchDots(slideIndex)
+			
     }
 
     sliderTrack.style.transform = `translate3d(0px, 0px, 0px)`
@@ -194,7 +202,9 @@ document.addEventListener(`DOMContentLoaded`, function () {
         return
       }
 
-      slide()
+			slide()
+			switchDots(slideIndex)
+			
       // indexSlideText.innerHTML = `${slideIndex + 1}/${slides.length}`;
 
     })
@@ -216,7 +226,7 @@ document.addEventListener(`DOMContentLoaded`, function () {
       const dotts = slider.querySelectorAll(`.js_dot`)
       dotts.forEach((dot) => {
         dot.classList.remove(`active`)
-        if (dot.dataset.slideIndex === index) {
+        if (dot.dataset.slideIndex == index) {
           dot.classList.add(`active`)
         }
       })

@@ -1,0 +1,85 @@
+-
+	var newsList = [
+		{
+			img: "/content/news-post",
+			date: "12 сентября 2020",
+			title: "Новость заголовок в две строки",
+			desc: "Описание новости, можно краткое в две строки"
+		},
+		{
+			img: "/content/news-post",
+			date: "12 сентября 2020",
+			title: "Новость заголовок в две строки",
+			desc: "Описание новости, можно краткое в две строки"
+		},
+		{
+			img: "/content/news-post",
+			date: "12 сентября 2020",
+			title: "Новость заголовок в две строки",
+			desc: "Описание новости, можно краткое в две строки"
+		},
+		{
+			img: "/content/news-post",
+			date: "12 сентября 2020",
+			title: "Новость заголовок в две строки",
+			desc: "Описание новости, можно краткое в две строки"
+		},
+		{
+			img: "/content/news-post",
+			date: "12 сентября 2020",
+			title: "Новость заголовок в две строки",
+			desc: "Описание новости, можно краткое в две строки"
+		},
+		{
+			img: "/content/news-post",
+			date: "12 сентября 2020",
+			title: "Новость заголовок в две строки",
+			desc: "Описание новости, можно краткое в две строки"
+		},
+		{
+			img: "/content/news-post",
+			date: "12 сентября 2020",
+			title: "Новость заголовок в две строки",
+			desc: "Описание новости, можно краткое в две строки"
+		},
+		{
+			img: "/content/news-post",
+			date: "12 сентября 2020",
+			title: "Новость заголовок в две строки",
+			desc: "Описание новости, можно краткое в две строки"
+		},
+		{
+			img: "/content/news-post",
+			date: "12 сентября 2020",
+			title: "Новость заголовок в две строки",
+			desc: "Описание новости, можно краткое в две строки"
+		},
+		{
+			img: "/content/news-post",
+			date: "12 сентября 2020",
+			title: "Новость заголовок в две строки",
+			desc: "Описание новости, можно краткое в две строки"
+		},
+		{
+			img: "/content/news-post",
+			date: "12 сентября 2020",
+			title: "Новость заголовок в две строки",
+			desc: "Описание новости, можно краткое в две строки"
+		}
+	]
+section.news
+	.news__container.container
+		include ../../common/breadcrumbs.pug
+		.news__wrapper
+			h1.news__title Новости
+			.news__tags
+			.news__content
+				ul.news__list
+					each item in newsList
+						li.news__item
+							.news__item-image
+								+image(item.img, "jpg", "news__item-img", "")
+							.news__item-content
+								.news__item-date=item.date
+								h3.news__item-title=item.title
+								.news__item-desc=item.desc
