@@ -1,5 +1,13 @@
 document.addEventListener(`DOMContentLoaded`, function () {
-  function sliderRun(jsslider, jssliderList, jssliderTrack, jsslides, jsarrows) {
+  function sliderRun(
+		jsslider, 
+		jssliderList, 
+		jssliderTrack, 
+		jsslides, 
+		jsarrows,
+		jspagination,
+		dotsname,
+		dotsClass) {
     const slider = document.querySelector(jsslider)
     const sliderList = slider.querySelector(jssliderList)
     const sliderTrack = slider.querySelector(jssliderTrack)
@@ -9,6 +17,7 @@ document.addEventListener(`DOMContentLoaded`, function () {
     const indexSlideText = arrows.children[1]
     const next = arrows.children[2]
     const slideWidth = slides[0].offsetWidth
+    const pagination = document.querySelector(jspagination)
     let slideIndex = 0
     let posInit = 0
     let posX1 = 0
@@ -209,10 +218,10 @@ document.addEventListener(`DOMContentLoaded`, function () {
 
     })
 
-    if (slider.querySelector(`.js__slider-pagination`)) {
+    if (slider.querySelector(jspagination)) {
 
-      slider.querySelector(`.js__slider-pagination`).addEventListener(`click`, function (e) {
-        const dotts = slider.querySelectorAll(`.js_dot`)
+      slider.querySelector(jspagination).addEventListener(`click`, function (e) {
+        const dotts = slider.querySelectorAll('.' + dotsname)
         dotts.forEach((dot) => {
           dot.classList.remove(`active`)
         })
@@ -223,7 +232,7 @@ document.addEventListener(`DOMContentLoaded`, function () {
     }
 
     function switchDots(index) {
-      const dotts = slider.querySelectorAll(`.js_dot`)
+      const dotts = slider.querySelectorAll('.' + dotsname)
       dotts.forEach((dot) => {
         dot.classList.remove(`active`)
         if (dot.dataset.slideIndex == index) {
@@ -231,41 +240,58 @@ document.addEventListener(`DOMContentLoaded`, function () {
         }
       })
     }
-    // indexSlideText.innerHTML = `${slideIndex + 1}/${slides.length}`;
-  }
-  if (document.querySelector(`.js__slider`)) {
-    sliderRun(
-      `.js__slider`,
-      `.js__slider-list`,
-      `.js__slider-track`,
-      `.js__slide`,
-      `.js__slider-arrows`
-    )
-    const slides = document.querySelectorAll(`.js__slide`)
-    const pagination = document.querySelector(`.js__slider-pagination`)
+		// indexSlideText.innerHTML = `${slideIndex + 1}/${slides.length}`;
     for (let i = 0; i < slides.length; i++) {
 
       const dot = document.createElement(`button`)
-      dot.classList.add(`hero__slider-pagination-item`)
-      dot.classList.add(`js_dot`)
+      dot.classList.add(dotsClass)
+      dot.classList.add(dotsname)
       dot.setAttribute(`data-slide-index`, i)
       pagination.append(dot)
     }
-    document.querySelectorAll(`.js_dot`)[0].classList.add(`active`)
-
-
-    // document.querySelector(`.js_dot`).classList
-  }
-
-
-  if (document.querySelector(`.js__partners-slider`)) {
-
+    document.querySelectorAll('.'+dotsname)[0].classList.add(`active`)
+	}
+	
+// ====================================================
+// ====================Вызов слайдеров=================
+// ====================================================
+// !слайдер на главной hero
+if (document.querySelector(`.js__slider`)) {
+	sliderRun(
+		`.js__slider`,
+		`.js__slider-list`,
+		`.js__slider-track`,
+		`.js__slide`,
+		`.js__slider-arrows`,
+		`.js__slider-pagination`,
+		`js_dot`,
+		`hero__slider-pagination-item`
+    )
+	}
+	
+// !слайдер новости
+  if (document.querySelector(`.js__news-slider`)) {
     sliderRun(
-      `.js__partners-slider`,
-      `.js__partners-slider-list`,
-      `.js__partners-slider-track`,
-      `.js__partners-slide`,
-      `.js__partners-slider-arrows`
+      `.js__news-slider`,
+      `.js__news-slider-list`,
+      `.js__news-slider-track`,
+      `.js__news-slide`,
+      `.js__news-slider-arrows`,
+			`.js__news-slider-pagination`,
+			`js_news-dot`,
+			`news__slider-pagination-item`
     )
   }
+
+
+  // if (document.querySelector(`.js__partners-slider`)) {
+
+  //   sliderRun(
+  //     `.js__partners-slider`,
+  //     `.js__partners-slider-list`,
+  //     `.js__partners-slider-track`,
+  //     `.js__partners-slide`,
+  //     `.js__partners-slider-arrows`
+  //   )
+  // }
 })

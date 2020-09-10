@@ -9,12 +9,45 @@ section.current-news
 				.current-news__slider-wrapper.js__news-slider-list
 					.current-news__slider-track.js__news-slider-track
 						.current-news__slider-slide.js__news-slide
-							img.current-news__slider-slide-image(src="")
-				.current-news__slider-pagination-container.container
-					.current-news__slider-pagination-list.js__slider-pagination
-				.current-news__slider-arrows.js__slider-arrows
+							img.current-news__slider-slide-image(src="/assets/img/content/hero_01.webp")
+						.current-news__slider-slide.js__news-slide
+							img.current-news__slider-slide-image(src="/assets/img/content/hero_01.webp")
+				.current-news__slider-pagination-list.js__news-slider-pagination
+				.current-news__slider-arrows.js__news-slider-arrows
 					button.prev.disabled.current-news__slider-controls-item.current-news__slider-controls-item--prev
 						+icon("arrow-slider-right", "current-news__slider-controls-img")
 					.current-news__slider-index.js__slider-index
 					button.next.current-news__slider-controls-item.current-news__slider-controls-item--next
 						+icon("arrow-slider-right", "current-news__slider-controls-img")
+			.current-news__content
+				p Федеральный центр компетенций промышленности (ФЦКП) создан в ___ году с целью решения проблем, с которыми связано технологическое перевооружение российского машиностроения.
+				h3 Главная цель ФЦКП 
+				p Долгосрочное обеспечение технологической независимости и конкурентоспособности российского машиностроения, и прежде всего, его стратегических высокотехнологических предприятий за счет преимущественного применения в российском машиностроении конкурентоспособных средств производства
+				h3 Вашему вниманию наш Центр предлагает:
+				ul
+					li Высокоточную механообработку материалов и деталей любой сложности.
+					li Проектирование и изготовление опытных образцов изделий.
+					li Разработку технологических процессов с подготовкой необходимого пакета документов.
+					li Производственный и технологический консалтинг.
+					li Сертификацию материалов станкоинструментальной промышленности.
+			.current-news__additional
+				h2.current-news__additional-title Другие новости
+				.current-news__additional-slider.js__addNewsSlider
+					.current-news__additional-slider-list.js__addNewsSlider-list
+						.current-news__additional-slider-track.js__addNewsSlider-track
+							.current-news__additional-slide.js__addNewsSlide 1
+							.current-news__additional-slide.js__addNewsSlide 2
+							.current-news__additional-slide.js__addNewsSlide 3
+							.current-news__additional-slide.js__addNewsSlide 4
+							.current-news__additional-slide.js__addNewsSlide 5
+							.current-news__additional-slide.js__addNewsSlide 6
+							.current-news__additional-slide.js__addNewsSlide 7
+							.current-news__additional-slide.js__addNewsSlide 8
+							.current-news__additional-slide.js__addNewsSlide 9
+					.current-news__additional-slider-pagination.js__addNewsSlider-pagination
+					.current-news__additional-slider-arrows.js__addNewsSlider-arrows
+						button.prev(type='button') 
+							+icon("arrow-slider-right", "current-news__additional-slider-controls-img")
+						button.next(type='button') 
+							+icon("arrow-slider-right", "current-news__additional-slider-controls-img")
+

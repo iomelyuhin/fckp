@@ -76,10 +76,5 @@
     "source/js/**/*.js",
     "source/img/**/*.svg",
     "source/sass/**/*.{sass,scss}"
-  ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run test"
-    }
-  }
+  ]
 }
