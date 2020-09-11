@@ -14,7 +14,7 @@ const svgSprite = require('./gulp/tasks/svgSprite')
 
 const dev = gulp.parallel(pug2html, styles, script, fonts, imageToWebp, svgSprite)
 
-const build = gulp.series(clean, copyDependencies, pug2html, styles, script, fonts, imageMinify, imageToWebp, imageToWebp, svgSprite)
+const build = gulp.series(clean, pug2html, styles, script, fonts, imageMinify, imageToWebp, imageToWebp, svgSprite)
 
 module.exports.start = gulp.series(dev, serve)
 module.exports.build = build

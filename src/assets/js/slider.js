@@ -42,30 +42,30 @@ document.addEventListener(`DOMContentLoaded`, function () {
 
     }
     const swipeStart = function () {
-      let evt = getEvent();
+      const evt = getEvent()
 
       if (allowSwipe) {
-        transition = true;
+        transition = true
 
-        nextTrf = (slideIndex + 1) * -slideWidth;
-        prevTrf = (slideIndex - 1) * -slideWidth;
+        nextTrf = (slideIndex + 1) * -slideWidth
+        prevTrf = (slideIndex - 1) * -slideWidth
 
-        posInit = posX1 = evt.clientX;
-        posY1 = evt.clientY;
+        posInit = posX1 = evt.clientX
+        posY1 = evt.clientY
 
-        sliderTrack.style.transition = "";
+        sliderTrack.style.transition = ``
 
-        document.addEventListener("touchmove", swipeAction);
-        document.addEventListener("mousemove", swipeAction);
-        document.addEventListener("touchend", swipeEnd);
-        document.addEventListener("mouseup", swipeEnd);
+        document.addEventListener(`touchmove`, swipeAction)
+        document.addEventListener(`mousemove`, swipeAction)
+        document.addEventListener(`touchend`, swipeEnd)
+        document.addEventListener(`mouseup`, swipeEnd)
 
-        sliderList.classList.remove("grab");
-        sliderList.classList.add("grabbing");
-			}
-			switchDots(slideIndex)
-			
-    };
+        sliderList.classList.remove(`grab`)
+        sliderList.classList.add(`grabbing`)
+      }
+      switchDots(slideIndex)
+
+    }
     const swipeAction = function () {
       const evt = getEvent()
       const style = sliderTrack.style.transform
@@ -123,9 +123,9 @@ document.addEventListener(`DOMContentLoaded`, function () {
         sliderTrack.style.transform = `translate3d(${
           transform - posX2
         }px, 0px, 0px)`
-			}
-			switchDots(slideIndex)
-			
+      }
+      switchDots(slideIndex)
+
     }
     const swipeEnd = function () {
       posFinal = posInit - posX1
@@ -158,8 +158,8 @@ document.addEventListener(`DOMContentLoaded`, function () {
         }
       } else {
         allowSwipe = true
-			}
-			switchDots(slideIndex)
+      }
+      switchDots(slideIndex)
     }
     const setTransform = function (transform, comapreTransform) {
       if (transform >= comapreTransform) {
@@ -167,16 +167,16 @@ document.addEventListener(`DOMContentLoaded`, function () {
           sliderTrack.style.transform = `translate3d(${comapreTransform}px, 0px, 0px)`
         }
       }
-			allowSwipe = false
-			switchDots(slideIndex)
-			
+      allowSwipe = false
+      switchDots(slideIndex)
+
     }
     const reachEdge = function () {
       transition = false
       swipeEnd()
-			allowSwipe = true
-			switchDots(slideIndex)
-			
+      allowSwipe = true
+      switchDots(slideIndex)
+
     }
 
     sliderTrack.style.transform = `translate3d(0px, 0px, 0px)`
@@ -202,9 +202,9 @@ document.addEventListener(`DOMContentLoaded`, function () {
         return
       }
 
-			slide()
-			switchDots(slideIndex)
-			
+      slide()
+      switchDots(slideIndex)
+
       // indexSlideText.innerHTML = `${slideIndex + 1}/${slides.length}`;
 
     })
@@ -266,6 +266,16 @@ document.addEventListener(`DOMContentLoaded`, function () {
       `.js__partners-slider-track`,
       `.js__partners-slide`,
       `.js__partners-slider-arrows`
+    )
+  }
+  if (document.querySelector(`.js__news-slider`)) {
+
+    sliderRun(
+      `.js__news-slider`,
+      `.js__news-slider-list`,
+      `.js__news-slider-track`,
+      `.js__news-slide`,
+      `.js__news-slider-arrows`
     )
   }
 })
