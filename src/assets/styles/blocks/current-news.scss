@@ -2,8 +2,13 @@
 .current-news__slider {
   position: relative;
   width: 100%;
+<<<<<<< HEAD
   height: 460px;
   margin: 30px auto 0;
+=======
+  height: 200px;
+  margin: 50px auto 0;
+>>>>>>> origin/master
   /* Чтобы во время перетаскивания слайда ничего не выделить внутри него */
   user-select: none;
   /* Чтобы запретить скролл страницы, если мы начали двигать слайдер по оси X */
@@ -20,16 +25,25 @@
 
 .current-news__slider-wrapper {
   width: 100%;
+<<<<<<< HEAD
   height: 460px;
   overflow: hidden;
   border-radius: 15px;
+=======
+  height: 200px;
+  overflow: hidden;
+>>>>>>> origin/master
 }
 
 .current-news__slider-wrapper.grab {
   cursor: grab;
 }
 
+<<<<<<< HEAD
 .current-news__slider-wrapper.grabbing {
+=======
+.current-news__slider-wrapper.grabbing{
+>>>>>>> origin/master
   cursor: grabbing;
 }
 
@@ -39,8 +53,12 @@
 
 .current-news__slider-slide {
   width: 100%;
+<<<<<<< HEAD
   // height: 200px;
   height: 460px;
+=======
+  height: 200px;
+>>>>>>> origin/master
   /* Чтобы слайды не сжимались */
   flex-shrink: 0;
   /* Увеличиваем и центрируем цифру внутри слайда */
@@ -48,7 +66,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
   // border: 1px solid #000;
+=======
+  border: 1px solid #000;
+>>>>>>> origin/master
 }
 
 .current-news__slider-arrows {
@@ -67,6 +89,7 @@
 
 .next.disabled,
 .prev.disabled {
+<<<<<<< HEAD
   opacity: 0.25;
   pointer-events: none;
 }
@@ -241,3 +264,10 @@
 	margin-top: 90px;
 }
 
+=======
+  opacity: .25;
+  pointer-events: none;
+}
+
+//конец слайдера
+>>>>>>> origin/master
