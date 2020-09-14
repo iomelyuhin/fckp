@@ -1,5 +1,6 @@
 .feedback {
-  margin-top: 0;
+	margin-top: 0;
+	margin-bottom: 90px;
 }
 
 .feedback__content {
@@ -106,7 +107,7 @@
 .feedback__input {
   width: 100%;
   background: $w;
-  border: 1px solid $border-active;
+  border: 1px solid $border;
   border-radius: 15px;
   padding: 30px;
   transition: 0.3s;
@@ -120,7 +121,7 @@
 
 
   &:focus {
-    border-color: $hl;
+    border-color: $border-active;
   }
 
   &::placeholder {

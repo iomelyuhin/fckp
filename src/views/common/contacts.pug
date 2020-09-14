@@ -1,0 +1,14 @@
+section.feedback
+	.feedback__container.container
+		.feedback__content
+			h2.feedback__title.title Если у вас остались вопросы, свяжитесь с нами прямо сейчас по указанным контактам!
+			//- .feedback__desc.desc Напишите нам по электронной почте, позвоните по телефону или просто заполните форму обратной связи.
+			.feedback__contacts
+				a.feedback__contacts-item(href="tel:74956063602") 
+					.feedback__contacts-item-icon
+						+icon("phone", "feedback__contacts-phone-pic")
+					.feedback__contacts-phone-text +7 (495) 606-36-02
+				a.feedback__contacts-item(href="mailto:fckp@mail.ru") 
+					.feedback__contacts-item-icon
+						+icon("mail", "feedback__contacts-mail-pic")
+					.feedback__contacts-mail-text fckp@mail.ru

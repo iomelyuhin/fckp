@@ -1,0 +1,101 @@
+section.current-product
+	.current-product__container
+		.current-product__breadcrumbs.container
+				.breadcrumbs__container
+					ul.breadcrumbs__list
+						li.breadcrumbs__item
+							a(href="/").breadcrumbs__link Главная
+						li.breadcrumbs__item
+							a(href="/product.html").breadcrumbs__link Виды деятельности
+						li.breadcrumbs__item
+							a(href="/products/product-01.html").breadcrumbs__link Высокоточная обработка материалов
+		.current-product__wrapper
+			.current-product__title-content.container
+				h1.current-product__title.main-title Высокоточная обработка материалов и изготовление готовых изделий любой сложности
+			.container
+				.current-product__slider.js__product-slider.container
+					.current-product__slider-wrapper.js__product-slider-list
+						.current-product__slider-track.js__product-slider-track
+							.current-product__slider-slide.js__product-slide(style="background-image: url('/assets/img/content/hero_01.webp'")
+								//- img.current-product__slider-slide-image(src="/assets/img/content/hero_01.webp")
+							.current-product__slider-slide.js__product-slide(style="background-image: url('/assets/img/content/hero_01.webp'")
+					.current-product__slider-pagination-list.js__product-slider-pagination
+					.current-product__slider-arrows.js__product-slider-arrows
+						button.prev.disabled.current-product__slider-controls-item.current-product__slider-controls-item--prev
+							+icon("arrow-slider-right", "current-product__slider-controls-img")
+						.current-product__slider-index.js__slider-index
+						button.next.current-product__slider-controls-item.current-product__slider-controls-item--next
+							+icon("arrow-slider-right", "current-product__slider-controls-img")
+			.current-product__content.container
+				p Федеральный центр компетенции промышленности на собственной производственной площадке выполняет высокоточную обработку и изготовление деталей любой сложности.
+				h3 В арсенале ФЦКП 
+				p современный, не имеющих аналогов в парк технологического оборудования из более, чем 50 единиц.
+				p Для решения Ваших задач, предлагаем ознакомиться с направлениями обработки материалов:
+				h3 Механообработка материалов и деталей:
+				ul
+					li Токарно-фрезерная обработка деталей с высокой точностью
+					li Многоосевая обработка корпусных деталей
+					li Высокоскоростная обработка профилеобразующией поверхности штампов и форм для литья
+					li Широкий спектр операций по шлифованию внутренних и внешних поверхностей тел вращения
+					li Плоско-профилешлифовальные операции
+					li Внутреннее и внешнее нарезание резьбы на поверхности тел вращения методом шлифования
+					li Работы по высокоточной балансировке тел вращения
+				h3 Обработка листового материала и труб:
+				ul
+					li Раскрой листового материала с использованием лазерной и плазменной резки
+					li Гибка листового материала
+					li Распил прутков
+					li Гибка труб и проволоки
+					li Изготовление корпусных элементов металлических шкафов
+				h3 Сварочные работы:
+				ul
+					li Сварка изделий и конструкций с повышенными требованиями по качеству с помощью роботизированного комплекса плазменной и электродуговой сварки.
+					li Полуавтоматическая электродуговая сварка изделий и конструкций в различных средах.
+				h3 Изготовление изделий из пластмасс:
+				ul
+					li Изготовление пластмассовых изделий методом литья под давлением.
+
+				p Также ФЦКП осуществляет услуги проектирования иизготовления пресс-форм для литья пластмассы.
+				h3 Мы применяем только новейшие разработки высокоточного оборудования:
+				ul
+					li Durma (Турция)
+					li Studer (Германия)
+					li Traube (Германия)
+					li Roders (Германия)
+					li BLOHM (Германия)
+					li KUKA (Германия)
+					li DMG (Германия)
+					li Mikron (Швейцария)
+					li EMAG (Германия)
+					li Красный Борец (Россия)
+					li Саста (Россия)
+					li СЗ (Россия) (Россия)
+					li СП Донпрессмаш (Россия)
+					li ВНИТЭП (Россия) и др.
+			.current-product__feedback.container
+				h2.current-product__feedback-title Как воспользоваться услугой?
+				ul.current-product__feedback-steps
+					li.current-product__feedback-step
+						.current-product__feedback-step-number 1
+						.current-product__feedback-step-text Обратитесь в ФЦКП, связавшись с нами по электронной почте или через онлайн-форму на сайте.
+					li.current-product__feedback-step
+						.current-product__feedback-step-number 2
+						.current-product__feedback-step-text Наши специалисты рассмотрят заявку и свяжутся для обсуждения сотрудничества.
+					li.current-product__feedback-step
+						.current-product__feedback-step-number 3
+						.current-product__feedback-step-text Мы составим более подробное техническое задание или доработаем имеющееся с учетом выясненных требований заказчика.
+					li.current-product__feedback-step
+						.current-product__feedback-step-number 4
+						.current-product__feedback-step-text На основе технического задания будет подготовлено коммерческое предложение и смета с указанием стоимости и сроков проведения всех работ.
+					li.current-product__feedback-step
+						.current-product__feedback-step-number 5
+						.current-product__feedback-step-text После согласования цены и сроков мы подписываем договор и приступаем к выполнению работы.
+					li.current-product__feedback-step
+						.current-product__feedback-step-number 6
+						.current-product__feedback-step-text После окончания работ результат передается вам с полным пакетом сопроводительной документации.
+				.current-product__feedback-contacts
+					include ../../common/contacts.pug
+
+
+			//- .current-product__additional.current-product__additional--additional-current-products
+			//- 	include ../../includes/product/additional-products.pug

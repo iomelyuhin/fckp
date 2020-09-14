@@ -1,20 +1,43 @@
 section.current-news
-	.current-news__container.container
-		include ../../common/breadcrumbs.pug
+	.current-news__container
+		.current-news__breadcrumbs.container
+			.breadcrumbs__container
+				ul.breadcrumbs__list
+					li.breadcrumbs__item
+						a(href="/").breadcrumbs__link Главная
+					li.breadcrumbs__item
+						a(href="/news.html").breadcrumbs__link Новости
+					li.breadcrumbs__item
+						a(href="/news/current-news.html").breadcrumbs__link Какая то конкретная новость
 		.current-news__wrapper
-			.current-news__title-content
-				h1.current-news__title
-				.current-news__date
-			.current-news__slider.js__news-slider
-				.current-news__slider-wrapper.js__news-slider-list
-					.current-news__slider-track.js__news-slider-track
-						.current-news__slider-slide.js__news-slide
-							img.current-news__slider-slide-image(src="")
-				.current-news__slider-pagination-container.container
-					.current-news__slider-pagination-list.js__slider-pagination
-				.current-news__slider-arrows.js__slider-arrows
-					button.prev.disabled.current-news__slider-controls-item.current-news__slider-controls-item--prev
-						+icon("arrow-slider-right", "current-news__slider-controls-img")
-					.current-news__slider-index.js__slider-index
-					button.next.current-news__slider-controls-item.current-news__slider-controls-item--next
-						+icon("arrow-slider-right", "current-news__slider-controls-img")
+			.current-news__title-content.container
+				h1.current-news__title.main-title Страница новости
+				.current-news__date 12 сентября 2020
+			.container
+				.current-news__slider.js__news-slider.container
+					.current-news__slider-wrapper.js__news-slider-list
+						.current-news__slider-track.js__news-slider-track
+							.current-news__slider-slide.js__news-slide(style="background-image: url('/assets/img/content/hero_01.webp'")
+								//- img.current-news__slider-slide-image(src="/assets/img/content/hero_01.webp")
+							.current-news__slider-slide.js__news-slide(style="background-image: url('/assets/img/content/hero_01.webp'")
+					.current-news__slider-pagination-list.js__news-slider-pagination
+					.current-news__slider-arrows.js__news-slider-arrows
+						button.prev.disabled.current-news__slider-controls-item.current-news__slider-controls-item--prev
+							+icon("arrow-slider-right", "current-news__slider-controls-img")
+						.current-news__slider-index.js__slider-index
+						button.next.current-news__slider-controls-item.current-news__slider-controls-item--next
+							+icon("arrow-slider-right", "current-news__slider-controls-img")
+			.current-news__content.container
+				p Федеральный центр компетенций промышленности (ФЦКП) создан в ___ году с целью решения проблем, с которыми связано технологическое перевооружение российского машиностроения.
+				h3 Главная цель ФЦКП 
+				p Долгосрочное обеспечение технологической независимости и конкурентоспособности российского машиностроения, и прежде всего, его стратегических высокотехнологических предприятий за счет преимущественного применения в российском машиностроении конкурентоспособных средств производства
+				h3 Вашему вниманию наш Центр предлагает:
+				ul
+					li Высокоточную механообработку материалов и деталей любой сложности.
+					li Проектирование и изготовление опытных образцов изделий.
+					li Разработку технологических процессов с подготовкой необходимого пакета документов.
+					li Производственный и технологический консалтинг.
+					li Сертификацию материалов станкоинструментальной промышленности.
+			.current-news__additional.current-news__additional--additional-news
+				include ../../includes/news/additional-news.pug
+

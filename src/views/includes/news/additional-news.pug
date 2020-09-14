@@ -1,0 +1,24 @@
+.additional-news
+	.additional-news__container.container
+		h2.additional-news__title.main-title Другие новости
+		.additional-news__container
+			.additional-news__slider.js__addNewsSlider
+				.additional-news__slider-list.js__addNewsSlider-list
+					.additional-news__slider-track.js__addNewsSlider-track
+						- for (var i=0; i<16; i++) { 
+							.additional-news__slide.js__addNewsSlide
+								a.additional-news__slide-wrap(href="/news/current-news.html")
+									.additional-news__slide-image(style="background-image: url('/assets/img/content/hero_01.webp'")
+									.additional-news__slide-content
+										.additional-news__slide-date 12 сентября 2020
+										.additional-news__slide-title Новость  заголовок в две строки
+										.additional-news__slide-desc Описание новости, можно краткое в две строки
+						- }
+				.additional-news__slider-pagination.js__addNewsSlider-pagination
+				.additional-news__slider-arrows.js__addNewsSlider-arrows
+					button.additional-news__slider-controls-item.prev(type='button').disabled
+						+icon("arrow-slider-right", "additional-news__slider-controls-img")
+					.additional-news__slider-index.js__slider-index
+						
+					button.additional-news__slider-controls-item.next(type='button') 
+						+icon("arrow-slider-right", "additional-news__slider-controls-img")

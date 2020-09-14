@@ -69,17 +69,30 @@
 	]
 section.news
 	.news__container.container
-		include ../../common/breadcrumbs.pug
+		.breadcrumbs__container.container
+			ul.breadcrumbs__list
+				li.breadcrumbs__item
+					a(href="/").breadcrumbs__link Главная
+				li.breadcrumbs__item
+					a(href="/news.html").breadcrumbs__link Новости
 		.news__wrapper
-			h1.news__title Новости
+			h1.news__title.main-title Новости
 			.news__tags
+				.news__tags-item Тег 1
+				.news__tags-item Тег 1
+				.news__tags-item Тег 1
+				.news__tags-item Тег 1
+				.news__tags-item Тег 1
+				.news__tags-item Тег 1
+
 			.news__content
-				ul.news__list
+				.news__list
 					each item in newsList
-						li.news__item
-							.news__item-image
-								+image(item.img, "jpg", "news__item-img", "")
-							.news__item-content
-								.news__item-date=item.date
-								h3.news__item-title=item.title
-								.news__item-desc=item.desc
+						a.news__item(href="/news/current-news.html")
+							.news__item-wrap
+								.news__item-image
+									+image(item.img, "jpg", "news__item-img", "")
+								.news__item-content
+									.news__item-date=item.date
+									h3.news__item-title=item.title
+									.news__item-desc=item.desc

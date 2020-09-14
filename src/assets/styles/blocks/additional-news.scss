@@ -1,0 +1,271 @@
+// SLIDER
+.additional-news__slider {
+  position: relative;
+  width: 100%;
+  // height: 460px;
+  margin: 30px auto 0;
+  /* Чтобы во время перетаскивания слайда ничего не выделить внутри него */
+  user-select: none;
+  /* Чтобы запретить скролл страницы, если мы начали двигать слайдер по оси X */
+	touch-action: pan-y;
+	
+	@include phones {
+		margin-top: 50px;
+	}
+}
+
+/* Если где-то внутри слайдера будут изображения,
+то нужно задать им pointer-events: none,
+чтобы они не перетаскивались мышью */
+
+.additional-news__slider img {
+  pointer-events: none;
+}
+
+.additional-news__slider-list {
+  width: 100%;
+  // height: 460px;
+  overflow: hidden;
+	border-radius: 15px;
+	
+}
+
+.additional-news__slider-list.grab {
+  cursor: grab;
+}
+
+.additional-news__slider-list.grabbing {
+  cursor: grabbing;
+}
+
+.additional-news__slider-track {
+	display: flex;
+	// flex-wrap: nowrap;
+	width: 100%;
+}
+
+.additional-news__slide {
+  width: 25%;
+  // height: 200px;
+	// height: 460px;
+	min-height: 325px;
+  /* Чтобы слайды не сжимались */
+  flex-shrink: 0;
+  /* Увеличиваем и центрируем цифру внутри слайда */
+  // font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+	// border: 1px solid #000;
+	
+	@include tab {
+		width: calc(100% / 3);
+	}
+
+	@include phones {
+		width: 50%;
+
+	}
+
+	@include phones-mini {
+		width: 100%;
+	}
+}
+
+.additional-news__slider-slide {
+  background-size: cover;
+}
+
+.additional-news__slider-pagination {
+	display: none;
+}
+
+.additional-news__slider-pagination-list {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  right: 30px;
+  z-index: 10;
+}
+
+.additional-news__slider-pagination-item {
+  width: 9px;
+  height: 9px;
+  border: 1px solid $pagin-border;
+  border-radius: 100%;
+  transition: 0.3s;
+  margin-right: 10px;
+  background-color: transparent;
+  cursor: pointer;
+
+  &.active {
+    background-color: $pagin-border;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    border: 1px solid $hl;
+    background-color: $hl;
+  }
+}
+
+.additional-news__slider-arrows {
+  position: absolute;
+  right: 0;
+  top: -90px;
+  display: flex;
+  z-index: 9;
+  // width: 100%;
+  // padding: 0 30px;
+  justify-content: space-between;
+	// transform: translateY(50%);
+	margin-top: 15px;
+	text-align: center;
+	
+	@include phones {
+		top: -70px;
+	}
+	
+.next,
+.prev {
+  background-color: #fff;
+  border-color: $border;
+  margin: 0 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.next.disabled,
+.prev.disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
+}
+
+
+.additional-news__slider-controls-item {
+  border: none;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  background-color: #fff;
+  border-color: $border;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &.disabled {
+    .additional-news__slider-controls-img {
+			fill: $separator;
+
+      @include tab {
+        fill: $separator;
+      }
+    }
+  }
+
+  &:first-child {
+    .additional-news__slider-controls-img {
+      transform: rotate(180deg);
+    }
+  }
+  .additional-news__slider-controls-img {
+  }
+
+  &:hover {
+    .additional-news__slider-controls-img {
+      fill: $hl;
+
+      @include tab {
+        fill: $hl-hover;
+      }
+    }
+  }
+
+  @include tab {
+    border: 1px solid #f2f2f5;
+    background: $w;
+  }
+}
+
+.additional-news__slider-controls-img {
+  width: 12px;
+  height: 8px;
+  fill: $hl;
+  transition: 0.3s;
+}
+
+.additional-news__slider-index {
+  display: none;
+}
+//конец слайдера
+
+.additional-news__slide-wrap {
+	margin-right: 20px;
+	border-radius: 15px;
+	background-color: #fff;
+	border: 1px solid $border;
+	overflow: hidden;
+}
+
+.additional-news__slide-image {
+	height: 150px;
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.additional-news__slide-content {
+	padding: 30px;
+}
+
+.additional-news__slide-date {
+	font-family: Muller;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 24px;
+	color: $text-grey;
+}
+
+.additional-news__slide-title {
+	font-family: Muller;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 26px;
+	color: $text;
+
+
+}
+
+.additional-news__slide-desc {
+	font-family: Muller;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	color: $text-grey;
+	line-height: 24px;
+}
+
+.additional-news__slide-wrap {
+
+	color: $text-grey;
+	&:active {
+		color: $text-grey;
+	}
+}
+
+
+
+
+
+.additional-news {
+	background-color: $bg-grey;
+	padding: 80px 0 100px 0;
+}

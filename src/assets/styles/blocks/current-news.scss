@@ -1,0 +1,243 @@
+// SLIDER
+.current-news__slider {
+  position: relative;
+  width: 100%;
+  height: 460px;
+  margin: 30px auto 0;
+  /* Чтобы во время перетаскивания слайда ничего не выделить внутри него */
+  user-select: none;
+  /* Чтобы запретить скролл страницы, если мы начали двигать слайдер по оси X */
+  touch-action: pan-y;
+}
+
+/* Если где-то внутри слайдера будут изображения,
+то нужно задать им pointer-events: none,
+чтобы они не перетаскивались мышью */
+
+.current-news__slider img {
+  pointer-events: none;
+}
+
+.current-news__slider-wrapper {
+  width: 100%;
+  height: 460px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.current-news__slider-wrapper.grab {
+  cursor: grab;
+}
+
+.current-news__slider-wrapper.grabbing {
+  cursor: grabbing;
+}
+
+.current-news__slider-track {
+  display: flex;
+}
+
+.current-news__slider-slide {
+  width: 100%;
+  // height: 200px;
+  height: 460px;
+  /* Чтобы слайды не сжимались */
+  flex-shrink: 0;
+  /* Увеличиваем и центрируем цифру внутри слайда */
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // border: 1px solid #000;
+}
+
+.current-news__slider-arrows {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.next,
+.prev {
+  background: none;
+  border: none;
+  margin: 0 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.next.disabled,
+.prev.disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.current-news__slider-slide {
+  background-size: cover;
+}
+
+.current-news__slider-pagination-list {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  right: 30px;
+  z-index: 10;
+}
+
+.current-news__slider-pagination-item {
+  width: 9px;
+  height: 9px;
+  border: 1px solid $pagin-border;
+  border-radius: 100%;
+  transition: 0.3s;
+  margin-right: 10px;
+  background-color: transparent;
+  cursor: pointer;
+
+  &.active {
+    background-color: $pagin-border;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    border: 1px solid $hl;
+    background-color: $hl;
+  }
+}
+
+.current-news__slider-arrows {
+  position: absolute;
+  right: 0;
+  bottom: 50%;
+  display: flex;
+  z-index: 9;
+  width: 100%;
+  padding: 0 30px;
+  justify-content: space-between;
+  transform: translateY(50%);
+}
+
+.current-news__slider-controls-item {
+  border: none;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  background-color: rgba($w, 0.15);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &.disabled {
+    .current-news__slider-controls-img {
+      @include tab {
+        fill: $separator;
+      }
+    }
+  }
+
+  &:first-child {
+    .current-news__slider-controls-img {
+      transform: rotate(180deg);
+    }
+  }
+  .current-news__slider-controls-img {
+    @include tab {
+      fill: $hl;
+    }
+  }
+
+  &:hover {
+    .current-news__slider-controls-img {
+      fill: $hl;
+
+      @include tab {
+        fill: $hl-hover;
+      }
+    }
+  }
+
+  @include tab {
+    border: 1px solid #f2f2f5;
+    background: $w;
+  }
+}
+
+.current-news__slider-controls-img {
+  width: 12px;
+  height: 8px;
+  fill: $w;
+  transition: 0.3s;
+}
+
+.current-news__slider-index {
+  display: none;
+}
+//конец слайдера
+
+//Контент текст
+.current-news__title-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 30px;
+}
+
+.current-news__date {
+	color: $text-grey;
+}
+
+.current-news {
+	.current-news__content {
+		margin-top: 40px;
+		p {
+			font-family: Muller;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 15px;
+			line-height: 28px;
+		}
+	
+		h3 {
+			margin-top: 20px;
+			margin-bottom: 13px;
+			font-family: Muller;
+			font-style: normal;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 24px;
+		}
+	
+		ul {
+			margin-left: 15px;
+	
+			li {
+				color: $text;
+				font-size: 15px;
+				line-height: 24px;
+				position: relative;
+				padding: 9px 0;
+	
+				&::before {
+					content: "";
+					display: flex;
+					width: 4px;
+					height: 4px;
+					border-radius: 100%;
+					background-color: $hl;
+					position: absolute;
+					top: 17px;
+					left: -13px;
+				}
+			}
+		}
+	}
+}
+
+.current-news__additional {
+	margin-top: 90px;
+}
+

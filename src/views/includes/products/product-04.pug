@@ -1,0 +1,75 @@
+section.current-product
+	.current-product__container
+		.current-product__breadcrumbs.container
+			.breadcrumbs__container
+				ul.breadcrumbs__list
+					li.breadcrumbs__item
+						a(href="/").breadcrumbs__link Главная
+					li.breadcrumbs__item
+						a(href="/product.html").breadcrumbs__link Виды деятельности
+					li.breadcrumbs__item
+						a(href="/products/product-04.html").breadcrumbs__link Проведение НИОКР
+		.current-product__wrapper
+			.current-product__title-content.container
+				h1.current-product__title.main-title Проведение НИОКР по разработке импортозамещающих технологий, оборудования и материалов для станкоинструментальной отрасли
+
+			.container
+				.current-product__slider.js__product-slider.container
+					.current-product__slider-wrapper.js__product-slider-list
+						.current-product__slider-track.js__product-slider-track
+							.current-product__slider-slide.js__product-slide(style="background-image: url('/assets/img/content/hero_01.webp'")
+								//- img.current-product__slider-slide-image(src="/assets/img/content/hero_01.webp")
+							.current-product__slider-slide.js__product-slide(style="background-image: url('/assets/img/content/hero_01.webp'")
+					.current-product__slider-pagination-list.js__product-slider-pagination
+					.current-product__slider-arrows.js__product-slider-arrows
+						button.prev.disabled.current-product__slider-controls-item.current-product__slider-controls-item--prev
+							+icon("arrow-slider-right", "current-product__slider-controls-img")
+						.current-product__slider-index.js__slider-index
+						button.next.current-product__slider-controls-item.current-product__slider-controls-item--next
+							+icon("arrow-slider-right", "current-product__slider-controls-img")
+			.current-product__content.container
+				p Федеральный центр компетенции промышленности на территории собственного лабораторно-исследовательского комплекса проводит НИОКР по по разработке импортозамещающих технологий,  оборудования и материалов для станкоинструментальной отрасли
+				p Уровень подготовки специалистов ФЦКП позволяет проводить научные исследования и получать научные результаты, соответствующие Мировому уровню.
+				p Научно-технические разработки коллектива высоко оценены международным сообществом на всевозможных научных конференциях форумах и выставках, что подтверждается престижными наградами и призами. 
+				p ФЦКП обладает обширной базой различного технологического оборудования (более 50 единиц), в том числе в своем составе имеет лаборатории, профилем которых являются технологии изготовления, испытания и контроля качества различных параметров изделий.
+				h3 Мы проводим исследования по направлениям:
+				ul
+					li Проектирование оборудования, оснастки и инструмента.
+					li Разработка технологий обработки материалов и создание готовых изделий.
+					li Разработка новых материалов с улучшенным комплексом свойств для нужд промышленности.
+					li Разработка и совершенствование технологических процессов.
+					li Разработка систем автоматического управления оборудованием.
+				h3 Разрабатываем документацию:
+				ul
+					li Научно-технические отчеты.
+					li Проекты лабораторных регламентов.
+					li Программы и методики проведения исследований.
+					li Конструкторскую документацию по ЕСКД.
+					li Разработка технических  заданий на опытно-конструкторские (технологические) работы.
+			.current-product__feedback.container
+				h2.current-product__feedback-title Как воспользоваться услугой?
+				ul.current-product__feedback-steps
+					li.current-product__feedback-step
+						.current-product__feedback-step-number 1
+						.current-product__feedback-step-text Обратитесь в ФЦКП, связавшись с нами по электронной почте или через онлайн-форму на сайте.
+					li.current-product__feedback-step
+						.current-product__feedback-step-number 2
+						.current-product__feedback-step-text Наши специалисты рассмотрят заявку и свяжутся для обсуждения сотрудничества.
+					li.current-product__feedback-step
+						.current-product__feedback-step-number 3
+						.current-product__feedback-step-text Мы составим более подробное техническое задание или доработаем имеющееся с учетом выясненных требований заказчика.
+					li.current-product__feedback-step
+						.current-product__feedback-step-number 4
+						.current-product__feedback-step-text На основе технического задания будет подготовлено коммерческое предложение и смета с указанием стоимости и сроков проведения всех работ.
+					li.current-product__feedback-step
+						.current-product__feedback-step-number 5
+						.current-product__feedback-step-text После согласования цены и сроков мы подписываем договор и приступаем к выполнению работы.
+					li.current-product__feedback-step
+						.current-product__feedback-step-number 6
+						.current-product__feedback-step-text После окончания работ результат передается вам с полным пакетом сопроводительной документации.
+				.current-product__feedback-contacts
+					include ../../common/contacts.pug
+
+
+			//- .current-product__additional.current-product__additional--additional-current-products
+			//- 	include ../../includes/product/additional-products.pug

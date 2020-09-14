@@ -1,9 +1,10 @@
 .benefits {
   margin: 0;
   background: url("/assets/img/content/benefits_bg.jpg") no-repeat, $bg-grey;
-  background-position: center center;
+  background-position: center bottom;
   background-size: auto;
-  min-height: 500px;
+	min-height: 500px;
+	padding-bottom: 90px;
 	
   @include phones {
     display: none;

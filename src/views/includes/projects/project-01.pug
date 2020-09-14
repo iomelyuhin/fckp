@@ -1,0 +1,32 @@
+section.current-project
+	.current-project__container
+		.current-project__breadcrumbs.container
+				include ../../common/breadcrumbs.pug
+		.current-project__wrapper
+			.current-project__title-content.container
+				h1.current-project__title.main-title Проект заголовок
+			.container
+				.current-project__slider.js__product-slider.container
+					.current-project__slider-wrapper.js__product-slider-list
+						.current-project__slider-track.js__product-slider-track
+							.current-project__slider-slide.js__product-slide(style="background-image: url('/assets/img/content/hero_01.webp'")
+								//- img.current-project__slider-slide-image(src="/assets/img/content/hero_01.webp")
+							.current-project__slider-slide.js__product-slide(style="background-image: url('/assets/img/content/hero_01.webp'")
+					.current-project__slider-pagination-list.js__product-slider-pagination
+					.current-project__slider-arrows.js__product-slider-arrows
+						button.prev.disabled.current-project__slider-controls-item.current-project__slider-controls-item--prev
+							+icon("arrow-slider-right", "current-project__slider-controls-img")
+						.current-project__slider-index.js__slider-index
+						button.next.current-project__slider-controls-item.current-project__slider-controls-item--next
+							+icon("arrow-slider-right", "current-project__slider-controls-img")
+			.current-project__content.container
+				p Федеральный центр компетенции промышленности на собственной производственной площадке выполняет высокоточную обработку и изготовление деталей любой сложности.
+				h3 В арсенале ФЦКП 
+				p современный, не имеющих аналогов в парк технологического оборудования из более, чем 50 единиц.
+				p Для решения Ваших задач, предлагаем ознакомиться с направлениями обработки материалов:
+				.current-project__feedback-contacts
+					include ../../common/contacts.pug
+
+
+			//- .current-project__additional.current-project__additional--additional-current-projects
+			//- 	include ../../includes/product/additional-products.pug

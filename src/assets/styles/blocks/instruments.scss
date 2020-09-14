@@ -1,0 +1,129 @@
+.instruments {
+	margin-bottom: 50px;
+}
+
+.instruments__title {
+  margin-top: 30px;
+}
+
+.instruments__text-content {
+  margin-top: 30px;
+
+  p {
+    font-family: Muller;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+		line-height: 28px;
+		max-width: 1000px;
+  }
+
+  h3 {
+    margin-top: 20px;
+    margin-bottom: 13px;
+    font-family: Muller;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  ul {
+    margin-left: 15px;
+
+    li {
+      color: $text;
+      font-size: 15px;
+      line-height: 24px;
+      position: relative;
+      padding: 9px 0;
+
+      &::before {
+        content: "";
+        display: flex;
+        width: 4px;
+        height: 4px;
+        border-radius: 100%;
+        background-color: $hl;
+        position: absolute;
+        top: 17px;
+        left: -13px;
+      }
+    }
+  }
+}
+
+.instruments__wrap {
+	margin-top: 70px;
+}
+
+.instruments__list {
+	display: flex;
+	flex-wrap: wrap;
+
+	@include tablets {
+		flex-direction: column;
+	}
+}
+
+.instruments__item {
+	padding-right: 30px;
+	width: 50%;
+	display: flex;
+	margin-bottom: 30px;
+	
+	@include tablets {
+		width: 100%;
+	}
+
+	@include phones {
+		flex-direction: column;
+	}
+
+}
+
+.instruments__item-image {
+	width: 50%;
+	height: 100%;
+	max-width: 264px;
+	max-height: 225px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	flex-shrink: 0;
+	border-radius: 15px;
+
+	@include tablets {
+		height: initial;
+	}
+
+	@include phones {
+		min-height: 225px;
+		width: 100%;
+	}
+}
+
+.instruments__item-info {
+	padding: 10px 0 0 30px;
+
+	@include phones {
+		padding-left: 0;
+	}
+}
+
+.instruments__item-title {
+	font-family: Muller;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 26px;
+}
+
+.instruments__item-desc {
+	font-family: Muller;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 24px;
+color: $text-grey;
+margin-top: 8px;
+}

@@ -16,7 +16,7 @@
 }
 
 .hero__slider-wrapper {
-  height: 90vh;
+  height: 95vh;
   width: 100%;
   overflow: hidden;
 
@@ -57,18 +57,22 @@
   width: 100%;
   background: url("/assets/img/content/hero_01.webp");
   background-repeat: no-repeat;
-  background-position-x: right;
-  background-size: 1460px;
+  background-position-x: 250px;
+  background-size: cover;
   max-width: 2260px;
   margin: 0 auto;
   position: absolute;
   opacity: 0;
   transition: 0.3s;
-
+	
   &.active {
-    opacity: 1;
-  }
-
+		opacity: 1;
+	}
+	
+	@include tab {
+		background-position-x: center;
+	}
+	
   @include phones {
     height: 100%;
     min-height: 880px;
@@ -170,8 +174,8 @@
 
 .hero__slider-arrows {
   position: absolute;
-  right: 0;
-  bottom: 32px;
+  right: 30px;
+  bottom: 30px;
   display: flex;
   z-index: 9;
 

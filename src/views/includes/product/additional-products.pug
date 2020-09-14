@@ -1,0 +1,24 @@
+.additional-product
+	.additional-product__container.container
+		h2.additional-product__title.main-title Другие направления
+		.additional-product__container
+			.additional-product__slider.js__addNewsSlider
+				.additional-product__slider-list.js__addNewsSlider-list
+					.additional-product__slider-track.js__addNewsSlider-track
+						- for (var i=0; i<16; i++) { 
+							.additional-product__slide.js__addNewsSlide
+								.additional-product__slide-wrap
+									.additional-product__slide-image(style="background-image: url('/assets/img/content/product_01.webp'")
+									.additional-product__slide-content
+										.additional-product__slide-content-text
+											.additional-product__slide-title Новость заголовок в две строки
+											.additional-product__slide-desc Описание новости, можно краткое в две строки
+										+ctaLight("Подробнее", "/product.html")
+						- }
+				.additional-product__slider-pagination.js__addNewsSlider-pagination
+				.additional-product__slider-arrows.js__addNewsSlider-arrows
+					button.additional-product__slider-controls-item.prev(type='button').disabled
+						+icon("arrow-slider-right", "additional-product__slider-controls-img")
+					.additional-product__slider-index.js__slider-index
+					button.additional-product__slider-controls-item.next(type='button') 
+						+icon("arrow-slider-right", "additional-product__slider-controls-img")

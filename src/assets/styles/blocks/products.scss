@@ -1,6 +1,6 @@
 .product {
   background-color: $bg-grey;
-  padding-top: 70px;
+  padding-top: 90px;
 	
   @include phones {
     padding-bottom: 70px;
@@ -88,5 +88,29 @@
 .product__mobile {
   @include phones {
     display: none;
+  }
+}
+
+.product__slider-pagination-item {
+  width: 9Px;
+  height: 9Px;
+  border: 1px solid $pagin-border;
+  border-radius: 100%;
+  transition: 0.3s;
+  margin-right: 10px;
+  background-color: #fff;
+  cursor: pointer;
+
+  &.active {
+    background-color: $pagin-border;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    border: 1px solid $hl;
+    background-color: $hl;
   }
 }

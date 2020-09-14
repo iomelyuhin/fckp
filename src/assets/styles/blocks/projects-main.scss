@@ -1,0 +1,140 @@
+.projects-main {
+	padding-top: 90px;
+}
+
+.breadcrumbs__container {
+	margin-top: 30px;
+}
+
+.projects-main__title {
+	margin-top: 30px;
+}
+
+.projects-main__tags {
+	display: flex;
+	flex-wrap: wrap;
+
+	@include tablets {
+		flex-wrap: nowrap;
+		overflow-x: scroll;
+		scroll-snap-type: y mandatory;
+		scroll-padding: 50%; 
+		overflow: -moz-scrollbars-none;
+	}
+}
+
+.projects-main__tag {
+	padding: 15px 25px;
+  font-family: Muller;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 15px;
+	background: transparent;
+	border: 1px solid #E2E2EA;
+	transition: 0.3s;
+  border-radius: 49px;
+	color: $hl;
+	margin: 10px 10px 0 0;
+	white-space: nowrap;
+	cursor: pointer;
+	
+	&.active {
+		background: #ff3230;
+		border: 1px solid #ff3230;
+		color: #fff;
+	}
+}
+
+.projects-main__list {
+	display: flex;
+	flex-wrap: wrap;
+	@include phones {
+    position: relative;
+    flex-direction: column;
+  }
+}
+
+.projects-main__item {
+	height: 310px;
+  width: 30%;
+  // width: calc(100%/3);
+  flex-shrink: 0;
+  border-radius: 15px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 22px 30px;
+  position: relative;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 1) 100%);
+	z-index: 2;
+	margin-bottom: 30px;
+	margin-right: 30px;
+  cursor: pointer;
+
+
+  &:hover {
+    .projects-main__image {
+      filter: blur(3px);
+    }
+  }
+	
+  @include phones {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.projects-main__image {
+	position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 310px;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.7;
+	transition: 0.5s;
+	
+	img {
+		max-width: 120%;
+	}
+}
+
+.projects-main__image-pic {
+	min-height: 100%;
+  filter: brightness(60%);
+}
+
+.projects-main__item-info {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  font-size: 12px;
+  color: $w;
+  position: relative;
+  z-index: 3;
+}
+
+.projects-main__text-content {
+  position: relative;
+  z-index: 3;
+
+}
+
+.projects-main__item-title {
+  color: $w;
+}
+
+.projects-main__item-desc {
+  color: $separator;
+  font-size: 15px;
+  margin-top: 8px;
+  line-height: 24px;
+}
+
+.projects-main__list {
+	margin-top: 40px;	
+}

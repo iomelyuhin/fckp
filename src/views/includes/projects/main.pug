@@ -1,0 +1,81 @@
+-
+	var casesArr = [
+		{
+			image: "case_01",
+			date: "21 августа 2020",
+			hash: "#технопарк",
+			title: "Технопарк «Инженеры будущего» Можно в две строки",
+			desc: "Механообработка любых материалов и любой сложности деталей. Изготовление опытных образцов Механообработка любых материалов и любой",
+			mobilesClass: "",
+			href: "/projects/project-01.html"
+		},
+		{
+			image: "case_01",
+			date: "21 августа 2020",
+			hash: "#технопарк",
+			title: "Технопарк «Инженеры будущего» Можно в две строки",
+			desc: "Механообработка любых материалов и любой сложности деталей. Изготовление опытных образцов Механообработка любых материалов и любой",
+			mobilesClass: "",
+			href: "/projects/project-01.html"
+		},
+		{
+			image: "case_01",
+			date: "21 августа 2020",
+			hash: "#технопарк",
+			title: "Технопарк «Инженеры будущего» Можно в две строки",
+			desc: "Механообработка любых материалов и любой сложности деталей. Изготовление опытных образцов Механообработка любых материалов и любой",
+			mobilesClass: "",
+			href: "/projects/project-01.html"
+		},
+		{
+			image: "case_01",
+			date: "21 августа 2020",
+			hash: "#технопарк",
+			title: "Технопарк «Инженеры будущего» Можно в две строки",
+			desc: "Механообработка любых материалов и любой сложности деталей. Изготовление опытных образцов Механообработка любых материалов и любой",
+			mobilesClass: "cases__mobiles-hide",
+			href: "/projects/project-01.html"
+		},
+		{
+			image: "case_01",
+			date: "21 августа 2020",
+			hash: "#технопарк",
+			title: "Технопарк «Инженеры будущего» Можно в две строки",
+			desc: "Механообработка любых материалов и любой сложности деталей. Изготовление опытных образцов Механообработка любых материалов и любой",
+			mobilesClass: "cases__mobiles-hide",
+			href: "/projects/project-01.html"
+		},
+	]
+
+section.projects-main
+	.projects-main__container.container
+		.breadcrumbs__container
+			ul.breadcrumbs__list
+				li.breadcrumbs__item
+					a(href="/").breadcrumbs__link Главная
+				li.breadcrumbs__item
+					a(href="/projects.html").breadcrumbs__link Проекты
+		h1.projects-main__title.main-title Проекты
+		.projects-main__tags
+			.projects-main__tag Тег 1
+			.projects-main__tag Тег 2
+			.projects-main__tag Тег 3
+			.projects-main__tag Тег 4
+			.projects-main__tag Тег 5
+			.projects-main__tag Тег 6
+			.projects-main__tag Тег 7
+			.projects-main__tag Тег 8
+			.projects-main__tag Тег 9
+			.projects-main__tag Тег 10
+
+		.projects-main__list
+			each casee in casesArr
+				a.projects-main__item(class=casee.mobilesClass href=casee.href)
+					.projects-main__image
+						+image(`content/${casee.image}`, "jpg", "projects-main__image-pic", "")
+					.projects-main__item-info
+						.projects-main__item-date=casee.date
+						.projects-main__item-hashtag=casee.hash
+					.projects-main__text-content
+						h3.projects-main__item-title.subtitle=casee.title
+						.projects-main__item-desc=casee.desc

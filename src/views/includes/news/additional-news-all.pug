@@ -1,0 +1,13 @@
+.additional-product-all
+	.additional-product-all__container.container
+		.additional-product-all__container-wrap
+			- for (var i=0; i<16; i++) { 
+				.additional-product-all__item
+					a.additional-product-all__item-wrap(href="/news/current-news.html")
+						.additional-product-all__item-image(style="background-image: url('/assets/img/content/hero_01.webp'")
+						.additional-product-all__item-content
+							.additional-product-all__item-date 12 сентября 2020
+							.additional-product-all__item-title Новость  заголовок в две строки
+							.additional-product-all__item-desc Описание новости, можно краткое в две строки
+			- }
+				

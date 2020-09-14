@@ -1,0 +1,39 @@
+section.current-product
+	.current-product__container
+		.current-product__breadcrumbs.container
+				.breadcrumbs__container
+					ul.breadcrumbs__list
+						li.breadcrumbs__item
+							a(href="/").breadcrumbs__link Главная
+						li.breadcrumbs__item
+							a(href="/product.html").breadcrumbs__link Виды деятельности
+		.current-product__wrapper
+			.current-product__title-content.container
+				h1.current-product__title.main-title Сертификация материалов
+			.container
+				.current-product__slider.js__news-slider.container
+					.current-product__slider-wrapper.js__news-slider-list
+						.current-product__slider-track.js__news-slider-track
+							.current-product__slider-slide.js__news-slide(style="background-image: url('/assets/img/content/hero_01.webp'")
+								//- img.current-product__slider-slide-image(src="/assets/img/content/hero_01.webp")
+							.current-product__slider-slide.js__news-slide(style="background-image: url('/assets/img/content/hero_01.webp'")
+					.current-product__slider-pagination-list.js__news-slider-pagination
+					.current-product__slider-arrows.js__news-slider-arrows
+						button.prev.disabled.current-product__slider-controls-item.current-product__slider-controls-item--prev
+							+icon("arrow-slider-right", "current-product__slider-controls-img")
+						.current-product__slider-index.js__slider-index
+						button.next.current-product__slider-controls-item.current-product__slider-controls-item--next
+							+icon("arrow-slider-right", "current-product__slider-controls-img")
+			.current-product__content.container
+				p Федеральный центр компетенций промышленности (ФЦКП) создан в ___ году с целью решения проблем, с которыми связано технологическое перевооружение российского машиностроения.
+				h3 Главная цель ФЦКП 
+				p Долгосрочное обеспечение технологической независимости и конкурентоспособности российского машиностроения, и прежде всего, его стратегических высокотехнологических предприятий за счет преимущественного применения в российском машиностроении конкурентоспособных средств производства
+				h3 Вашему вниманию наш Центр предлагает:
+				ul
+					li Высокоточную механообработку материалов и деталей любой сложности.
+					li Проектирование и изготовление опытных образцов изделий.
+					li Разработку технологических процессов с подготовкой необходимого пакета документов.
+					li Производственный и технологический консалтинг.
+					li Сертификацию материалов станкоинструментальной промышленности.
+			.current-product__additional.current-product__additional--additional-current-products
+				include ../../includes/product/additional-products.pug

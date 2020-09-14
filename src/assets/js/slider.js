@@ -1,5 +1,13 @@
 document.addEventListener(`DOMContentLoaded`, function () {
-  function sliderRun(jsslider, jssliderList, jssliderTrack, jsslides, jsarrows) {
+  function sliderRun(
+		jsslider, 
+		jssliderList, 
+		jssliderTrack, 
+		jsslides, 
+		jsarrows,
+		jspagination,
+		dotsname,
+		dotsClass) {
     const slider = document.querySelector(jsslider)
     const sliderList = slider.querySelector(jssliderList)
     const sliderTrack = slider.querySelector(jssliderTrack)
@@ -9,6 +17,7 @@ document.addEventListener(`DOMContentLoaded`, function () {
     const indexSlideText = arrows.children[1]
     const next = arrows.children[2]
     const slideWidth = slides[0].offsetWidth
+    const pagination = document.querySelector(jspagination)
     let slideIndex = 0
     let posInit = 0
     let posX1 = 0
@@ -42,30 +51,30 @@ document.addEventListener(`DOMContentLoaded`, function () {
 
     }
     const swipeStart = function () {
-      const evt = getEvent()
+      let evt = getEvent();
 
       if (allowSwipe) {
-        transition = true
+        transition = true;
 
-        nextTrf = (slideIndex + 1) * -slideWidth
-        prevTrf = (slideIndex - 1) * -slideWidth
+        nextTrf = (slideIndex + 1) * -slideWidth;
+        prevTrf = (slideIndex - 1) * -slideWidth;
 
-        posInit = posX1 = evt.clientX
-        posY1 = evt.clientY
+        posInit = posX1 = evt.clientX;
+        posY1 = evt.clientY;
 
-        sliderTrack.style.transition = ``
+        sliderTrack.style.transition = "";
 
-        document.addEventListener(`touchmove`, swipeAction)
-        document.addEventListener(`mousemove`, swipeAction)
-        document.addEventListener(`touchend`, swipeEnd)
-        document.addEventListener(`mouseup`, swipeEnd)
+        document.addEventListener("touchmove", swipeAction);
+        document.addEventListener("mousemove", swipeAction);
+        document.addEventListener("touchend", swipeEnd);
+        document.addEventListener("mouseup", swipeEnd);
 
-        sliderList.classList.remove(`grab`)
-        sliderList.classList.add(`grabbing`)
-      }
-      switchDots(slideIndex)
-
-    }
+        sliderList.classList.remove("grab");
+        sliderList.classList.add("grabbing");
+			}
+			switchDots(slideIndex)
+			
+    };
     const swipeAction = function () {
       const evt = getEvent()
       const style = sliderTrack.style.transform
@@ -123,9 +132,9 @@ document.addEventListener(`DOMContentLoaded`, function () {
         sliderTrack.style.transform = `translate3d(${
           transform - posX2
         }px, 0px, 0px)`
-      }
-      switchDots(slideIndex)
-
+			}
+			switchDots(slideIndex)
+			
     }
     const swipeEnd = function () {
       posFinal = posInit - posX1
@@ -158,8 +167,8 @@ document.addEventListener(`DOMContentLoaded`, function () {
         }
       } else {
         allowSwipe = true
-      }
-      switchDots(slideIndex)
+			}
+			switchDots(slideIndex)
     }
     const setTransform = function (transform, comapreTransform) {
       if (transform >= comapreTransform) {
@@ -167,16 +176,16 @@ document.addEventListener(`DOMContentLoaded`, function () {
           sliderTrack.style.transform = `translate3d(${comapreTransform}px, 0px, 0px)`
         }
       }
-      allowSwipe = false
-      switchDots(slideIndex)
-
+			allowSwipe = false
+			switchDots(slideIndex)
+			
     }
     const reachEdge = function () {
       transition = false
       swipeEnd()
-      allowSwipe = true
-      switchDots(slideIndex)
-
+			allowSwipe = true
+			switchDots(slideIndex)
+			
     }
 
     sliderTrack.style.transform = `translate3d(0px, 0px, 0px)`
@@ -202,17 +211,17 @@ document.addEventListener(`DOMContentLoaded`, function () {
         return
       }
 
-      slide()
-      switchDots(slideIndex)
-
+			slide()
+			switchDots(slideIndex)
+			
       // indexSlideText.innerHTML = `${slideIndex + 1}/${slides.length}`;
 
     })
 
-    if (slider.querySelector(`.js__slider-pagination`)) {
+    if (slider.querySelector(jspagination)) {
 
-      slider.querySelector(`.js__slider-pagination`).addEventListener(`click`, function (e) {
-        const dotts = slider.querySelectorAll(`.js_dot`)
+      slider.querySelector(jspagination).addEventListener(`click`, function (e) {
+        const dotts = slider.querySelectorAll('.' + dotsname)
         dotts.forEach((dot) => {
           dot.classList.remove(`active`)
         })
@@ -223,7 +232,7 @@ document.addEventListener(`DOMContentLoaded`, function () {
     }
 
     function switchDots(index) {
-      const dotts = slider.querySelectorAll(`.js_dot`)
+      const dotts = slider.querySelectorAll('.' + dotsname)
       dotts.forEach((dot) => {
         dot.classList.remove(`active`)
         if (dot.dataset.slideIndex == index) {
@@ -231,51 +240,85 @@ document.addEventListener(`DOMContentLoaded`, function () {
         }
       })
     }
-    // indexSlideText.innerHTML = `${slideIndex + 1}/${slides.length}`;
-  }
-  if (document.querySelector(`.js__slider`)) {
-    sliderRun(
-      `.js__slider`,
-      `.js__slider-list`,
-      `.js__slider-track`,
-      `.js__slide`,
-      `.js__slider-arrows`
-    )
-    const slides = document.querySelectorAll(`.js__slide`)
-    const pagination = document.querySelector(`.js__slider-pagination`)
+		// indexSlideText.innerHTML = `${slideIndex + 1}/${slides.length}`;
     for (let i = 0; i < slides.length; i++) {
 
       const dot = document.createElement(`button`)
-      dot.classList.add(`hero__slider-pagination-item`)
-      dot.classList.add(`js_dot`)
+      dot.classList.add(dotsClass)
+      dot.classList.add(dotsname)
       dot.setAttribute(`data-slide-index`, i)
       pagination.append(dot)
     }
-    document.querySelectorAll(`.js_dot`)[0].classList.add(`active`)
-
-
-    // document.querySelector(`.js_dot`).classList
-  }
-
-
-  if (document.querySelector(`.js__partners-slider`)) {
-
-    sliderRun(
-      `.js__partners-slider`,
-      `.js__partners-slider-list`,
-      `.js__partners-slider-track`,
-      `.js__partners-slide`,
-      `.js__partners-slider-arrows`
+    document.querySelectorAll('.'+dotsname)[0].classList.add(`active`)
+	}
+	
+// ====================================================
+// ====================Вызов слайдеров=================
+// ====================================================
+// !слайдер на главной hero
+if (document.querySelector(`.js__slider`)) {
+	sliderRun(
+		`.js__slider`,
+		`.js__slider-list`,
+		`.js__slider-track`,
+		`.js__slide`,
+		`.js__slider-arrows`,
+		`.js__slider-pagination`,
+		`js_dot`,
+		`hero__slider-pagination-item`
     )
-  }
+	}
+	
+// !слайдер новости
   if (document.querySelector(`.js__news-slider`)) {
-
     sliderRun(
       `.js__news-slider`,
       `.js__news-slider-list`,
       `.js__news-slider-track`,
       `.js__news-slide`,
-      `.js__news-slider-arrows`
+      `.js__news-slider-arrows`,
+			`.js__news-slider-pagination`,
+			`js_news-dot`,
+			`news__slider-pagination-item`
     )
   }
+// !слайдер направление
+  if (document.querySelector(`.js__product-slider`)) {
+    sliderRun(
+      `.js__product-slider`,
+      `.js__product-slider-list`,
+      `.js__product-slider-track`,
+      `.js__product-slide`,
+      `.js__product-slider-arrows`,
+			`.js__product-slider-pagination`,
+			`js_product-dot`,
+			`product__slider-pagination-item`
+    )
+	}
+	
+// 	 // !слайдер новостей дополнительных
+if (document.querySelector(`.js__casesSlider`)) {
+  sliderRun(
+    `.js__casesSlider`,
+    `.js__casesSlider-list`,
+    `.js__casesSlider-track`,
+    `.js__casesSlide`,
+    `.js__casesSlider-arrows`,
+		`.js__casesSlider-pagination`,
+		`js_cases-dot`,
+		`cases__slider-pagination-item`
+  )
+}
+
+
+  // if (document.querySelector(`.js__partners-slider`)) {
+
+  //   sliderRun(
+  //     `.js__partners-slider`,
+  //     `.js__partners-slider-list`,
+  //     `.js__partners-slider-track`,
+  //     `.js__partners-slide`,
+  //     `.js__partners-slider-arrows`
+  //   )
+  // }
 })

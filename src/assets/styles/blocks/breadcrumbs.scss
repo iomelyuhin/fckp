@@ -1,0 +1,32 @@
+.breadcrumbs__list {
+	display: flex;
+
+}
+
+.breadcrumbs__item {
+	display: flex;
+	align-items: center;
+	margin-right: 10px;
+	&::after {
+		content: "";
+		width: 3Px;
+		height: 3Px;
+		background-color: $text;
+		display: flex;
+		margin-left: 10px;
+		border-radius: 3px;
+	}
+
+	&:last-child {
+		&::after {
+			display: none;
+		}
+		.breadcrumbs__link {
+			color: $text-grey;
+		}
+	}
+}
+
+.breadcrumbs__link {
+	color: $hl;
+}
